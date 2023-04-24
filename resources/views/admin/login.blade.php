@@ -26,13 +26,15 @@
                                         </div>
                                     @endif
 
-                                    <div class="form-group ">
-                                        <input type="email" name="email" class="form-control" placeholder="Email">
+                                    <div class="mb-3">
+                                        <input type="email" name="email" class="form-control form-control-lg"
+                                            placeholder="Email">
                                     </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" class="form-control" placeholder="Password">
+                                    <div class="mb-3">
+                                        <input type="password" name="password" class="form-control form-control-lg"
+                                            placeholder="Password">
                                     </div>
-                                    <button type="submit" class="btn login-form__btn submit w-100">Sign In</button>
+                                    <button type="submit" class="btn btn-primary w-100 p-3">Sign In</button>
                                 </form>
                                 <p class="mt-5 login-form__footer text-center"><a href="page-register.html"
                                         class="text-primary">Lupa
