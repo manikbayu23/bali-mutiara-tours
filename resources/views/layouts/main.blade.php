@@ -60,22 +60,20 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                            aria-expanded="false">
+                    <li class="nav-item {{ request()->is('/') ? 'active' : '' }}"><a href="/"
+                            class="nav-link">Home</a></li>
+                    <li
+                        class="nav-item {{ request()->routeIs('pengunjung.paket-tour', 'pengunjung.paket-tour.show*') ? 'active' : '' }}">
+                        <a class="nav-link " href="{{ route('pengunjung.paket-tour') }}">
                             Paket Tour
                         </a>
-                        <div class="dropdown-menu ">
-                            <a class="dropdown-item" href="paket-tours-bali.html">Paket Tour Bali</a>
-                            <a class="dropdown-item" href="paket-tours-lombok.html">Paket Tour Lombok</a>
-                            <a class="dropdown-item" href="paket-tours-nusa-penida.html">Paket Tour
-                                Nusa Penida</a>
-                        </div>
                     </li>
-                    <li class="nav-item"><a href="sewa-mobil.html" class="nav-link">Sewa Mobil</a></li>
+                    <li class="nav-item {{ request()->routeIs('pengunjung.sewa-mobil') ? 'active' : '' }}"><a
+                            href="{{ route('pengunjung.sewa-mobil') }}" class="nav-link">Sewa Mobil</a>
+                    </li>
                     <li class="nav-item"><a href="artikel.html" class="nav-link">Artikel</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Kontak</a></li>
+                    <li class="nav-item {{ request()->routeIs('pengunjung.kontak') ? 'active' : '' }}"><a
+                            href="{{ route('pengunjung.kontak') }}" class="nav-link">Kontak</a></li>
                 </ul>
             </div>
         </div>

@@ -103,13 +103,14 @@
                 @forelse ($tour as $card)
                     <div class="col-md-4 ftco-animate">
                         <div class="project-wrap">
-                            <a href="{{ route('pengunjung.paket-tour', $card->slug) }}" class="img"
+                            <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}" class="img"
                                 style="background-image: url(images/gallery/{{ $card->id_gambar }});">
                                 <span class="price">IDR {{ $card->harga_utama }}K/Person</span>
                             </a>
                             <div class="text p-4">
                                 <span class="days">{{ $card->durasi }}</span>
-                                <h3><a href="{{ route('pengunjung.paket-tour', $card->slug) }}">{{ $card->nama_tour }}</a>
+                                <h3><a
+                                        href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">{{ $card->nama_tour }}</a>
                                 </h3>
                                 <p class="location"><span class="fa fa-map-marker"></span> {{ $card->lokasi }}</p>
                                 <ul>
@@ -138,8 +139,8 @@
                 @endforelse
 
                 <div class="ftco-animate text-right pb-4" style="width: 100%;">
-                    <a href="paket-tours-bali.html" class=" btn btn-link ">Lihat Selengkapnya <i class="fa fa-arrow-right"
-                            aria-hidden="true"></i></a>
+                    <a href="{{ route('pengunjung.paket-tour') }}" class=" btn btn-link ">Lihat Selengkapnya <i
+                            class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -343,7 +344,7 @@
                     </div>
                 </div>
 
-            </div> -->
+            </div>
 
             <div class="ftco-animate text-right" style="width: 100%;">
                 <a href="artikel.html" class=" btn btn-link ">Lihat Selengkapnya <i class="fa fa-arrow-right"

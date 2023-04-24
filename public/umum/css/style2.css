@@ -21,7 +21,6 @@
 
 .bintang {
     color: rgb(255, 233, 36);
-    margin-left: 10px;
     margin-bottom: 20px;
 }
 
@@ -49,7 +48,6 @@
 }
 
 .tombol1 {
-    margin-top: 25px;
     display: flex;
 
 }

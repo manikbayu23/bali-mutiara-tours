@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DestinasiController;
 use App\Http\Controllers\Admin\PaketTourController;
 use App\Http\Controllers\Admin\SewaMobilController;
+use App\Http\Controllers\SewaMobilViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,12 +24,22 @@ use App\Http\Controllers\Admin\SewaMobilController;
 */
 
 
-//pengunjung
+//Home
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/paket-tour/{slug}', [HomeController::class, 'show'])->name('pengunjung.paket-tour');
+
+//Sewa Mobil
+Route::get('/sewa-mobil', [SewaMobilViewController::class, 'index'])->name('pengunjung.sewa-mobil');
 
 
+//Paket Tour
+Route::get('/paket-tour', [HomeController::class, 'paket_tour'])->name('pengunjung.paket-tour');
+Route::get('/paket-tour/{slug}', [HomeController::class, 'show'])->name('pengunjung.paket-tour.show');
 
+
+//Kontak
+Route::get('/kontak', [HomeController::class, 'kontak'])->name('pengunjung.kontak');
+
+//Login Admin
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login');
 Route::post('/admin/proses-login', [LoginController::class, 'prosesLogin'])->name('proses-login');
 Route::get('/admin/logout', [LoginController::class, 'logout'])->name('logout');

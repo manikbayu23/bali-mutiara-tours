@@ -6,6 +6,7 @@ use Jorenvh\Share\Share;
 use App\Models\Destinasi;
 use App\Models\PaketTour;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -13,7 +14,11 @@ class HomeController extends Controller
     public function index()
     {
 
-        $tour = PaketTour::where('is_archived', '0')->take(5)->get();
+        $tour = PaketTour::where('is_archived', '0')
+            ->whereIn('durasi', ['3 Hari 2 Malam', '4 Hari 3 Malam', '1 Hari'])
+            ->take(9)
+            ->get();
+
 
         return view('home', [
             "title" => "Eksplorasi Keindahan Alam Bali - Nusa Penida & Lombok",
@@ -52,7 +57,7 @@ class HomeController extends Controller
         }
         $total_destinasi = count($destinasiList);
 
-        return view('paket-tour', [
+        return view('paket-tour-show', [
             "title" => $title,
             "description" => $deskripsi,
             "keywords" => $keyword,
@@ -78,5 +83,51 @@ class HomeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function paket_tour(Request $request)
+    {
+
+        $lokasi = $request->input('lokasi');
+        $durasi = $request->input('durasi');
+        $kategori = $request->input('kategori');
+
+        // membuat query builder untuk paket tour
+        $tours = DB::table('paket_tour')
+            ->join('kategori', 'paket_tour.id_kategori', '=', 'kategori.id')
+            ->select('paket_tour.*', 'kategori.nama_kategori')
+            ->where(function ($query) use ($request) {
+                if ($request->lokasi) {
+                    $query->where('paket_tour.lokasi', $request->lokasi);
+                }
+                if ($request->durasi) {
+                    $query->where('paket_tour.durasi', $request->durasi);
+                }
+                if ($request->kategori) {
+                    $query->where('kategori.kategori_tour', $request->kategori);
+                }
+            })->where('is_archived', '0')->orderBy('paket_tour.durasi', 'asc')
+            ->paginate(12);
+
+        return view('paket-tour', [
+            "title" => "Paket Tours - Bali - Nusa Penida & Lombok",
+            "description" => "Paket Tours Bali, Nusa Penida, dan Lombok dari Bali Mutiara Tours. Nikmati liburan yang tak terlupakan dengan paket tour kami yang menampilkan keindahan alam Bali, Nusa Penida, dan Lombok. Dapatkan pengalaman yang menyenangkan dan berkualitas dengan Bali Mutiara Tours.",
+            "keywords" => "Paket tour Bali, travel operator lokal, paket tour Lombok, paket tour Nusa Penida, paket tour domestik, paket tour mancanegara, hotel Bali, resort Bali, cruise Bali, fleksibilitas paket tour, kenyamanan perjalanan, perjalanan impian, paket travelling Bali, paket travelling Lombok, paket travelling Nusa Penida, wisata Bali, Bali Mutiara Tour, wisata Lombok, wisata Nusa Penida, liburan Bali, liburan Lombok, liburan Nusa Penida, tour murah Bali, tour murah Lombok, tour murah Nusa Penida, pilihan hotel Bali, pilihan hotel Lombok, pilihan hotel Nusa Penida, promo paket tour Bali, promo paket tour Lombok, promo paket tour Nusa Penida, tour guide lokal, transportasi Bali, transportasi Lombok, transportasi Nusa Penida, aktivitas Bali, aktivitas Lombok, aktivitas Nusa Penida, sewa mobil Bali, sewa mobil Lombok, sewa mobil Nusa Penida, rental mobil Bali, rental mobil Lombok, rental mobil Nusa Penida, penyewaan mobil Bali, penyewaan mobil Lombok, penyewaan mobil Nusa Penida, harga sewa mobil Bali, harga sewa mobil Lombok, harga sewa mobil Nusa Penida, sewa mobil harian Bali, sewa mobil harian Lombok, sewa mobil harian Nusa Penida, sewa mobil mingguan Bali, sewa mobil mingguan Lombok, sewa mobil mingguan Nusa Penida, sewa mobil bulanan Bali, sewa mobil bulanan Lombok, sewa mobil bulanan Nusa Penida, rental mobil Bali murah, rental mobil Lombok murah, rental mobil Nusa Penida murah.",
+            "tours" => $tours,
+            "lokasi" => $lokasi,
+            "durasi" => $durasi,
+            "kategori" => $kategori,
+        ]);
+    }
+
+    public function kontak()
+    {
+        return view('kontak', [
+            "title" => "Kontak - Pengalaman Liburan Terbaik di Bali",
+            "description" => "Hubungi Bali Mutiara Tours untuk pengalaman liburan yang tak terlupakan di Bali. Dapatkan layanan berkualitas tinggi dan pelayanan pelanggan yang ramah dari tim ahli kami. Temukan cara terbaik untuk menghubungi kami di halaman kontak kami.",
+            "keywords" => "Bali Mutiara Tours, kontak, liburan Bali, pelayanan pelanggan.",
+
+
+        ]);
     }
 }
