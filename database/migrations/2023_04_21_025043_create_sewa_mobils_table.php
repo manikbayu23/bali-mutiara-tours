@@ -16,7 +16,7 @@ class CreateSewaMobilsTable extends Migration
         Schema::create('sewa_mobil', function (Blueprint $table) {
             $table->id();
             $table->string('nama_mobil')->unique();
-            $table->bigInteger('harga_sewa');
+            $table->string('harga_sewa');
             $table->string('foto_mobil');
             $table->string('slug');
             $table->timestamps();

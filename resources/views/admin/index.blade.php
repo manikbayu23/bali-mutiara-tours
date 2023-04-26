@@ -1,5 +1,7 @@
 @extends('layouts.admin')
 
+@section('judul_halaman', 'Dashboard')
+
 @section('content-admin')
     <div class="row">
         <div class="col-lg-3 col-sm-6">
