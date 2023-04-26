@@ -105,6 +105,15 @@
     <section class="content">
         <div class="content-admin " id="content-admin">
             <div class="container-fluid">
+                @if (Session::has('success'))
+                    <div class="pt-3">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ Session::get('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Close"></button>
+                        </div>
+                    </div>
+                @endif
                 <h1 class="judul-content fw-semibold">@yield('judul_halaman')</h1>
                 @yield('content-admin')
             </div>

@@ -1,7 +1,7 @@
 @extends('layouts.login')
 
 @section('login')
-    <a href="/" class="btn btn-link m-4">Back</a>
+    <a href="/" class="btn btn-primary m-4">Back</a>
     <div class="row justify-content-center mb-5">
         <div class="card  shadow border-0" style="width: 38rem;">
             <div class="card-body p-5">
@@ -15,8 +15,7 @@
                         <div class="alert alert-danger">
                             <ul>
                                 @foreach ($errors->all() as $error)
-                                    <li><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-                                        {{ $error }}</li>
+                                    <li><i class="fa-solid fa-triangle-exclamation"></i> {{ $error }}</li>
                                 @endforeach
                             </ul>
                         </div>
