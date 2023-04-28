@@ -9,19 +9,22 @@ use App\Models\PaketTour;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class PaketTourController extends Controller
 {
 
-    public function index()
+    public function index(Request $request)
     {
 
-        $tour = PaketTour::paginate(10);
+        $tour = PaketTour::orderBy('created_at', 'desc')->paginate(10);
 
         foreach ($tour as $tours) {
             // Menggunakan fungsi explode untuk memisahkan genre yang dipisahkan dengan koma
             $genres = explode(",", $tours->kategori->nama_kategori);
         }
+
+        Session::put('halaman_url', request()->fullUrl());
 
         return view('admin.paket-tour', [
             "title" => "Paket Tour",
@@ -203,6 +206,11 @@ class PaketTourController extends Controller
 
         $tour->save();
 
+        if (session('halaman_url')) {
+            return Redirect(session('halaman_url'))->with('success', 'Paket Tour berhasil diperbarui');
+        }
+
+
         return redirect()->route('paket-tour')
             ->with('success', 'Paket Tour berhasil diperbarui.');
     }
@@ -210,7 +218,7 @@ class PaketTourController extends Controller
 
     public function destroy($slug)
     {
-        $hapus = PaketTour::find($slug);
+        $hapus = PaketTour::where('slug', $slug)->firstOrFail();
         $hapus->delete();
 
         return redirect()->back();

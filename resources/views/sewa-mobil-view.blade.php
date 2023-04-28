@@ -51,6 +51,8 @@
                     Tidak Ada Mobil
                 @endforelse
             </div>
-        </div>
+            <div class="mt-3 d-flex justify-content-center">
+                {{ $data->links() }}
+            </div>
     </section>
 @endsection

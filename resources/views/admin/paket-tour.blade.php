@@ -67,7 +67,7 @@
                                                         class="fa-solid fa-edit" aria-hidden="true"></i>
                                                 </a>
                                                 <a href="" data-nama="{{ $row->nama_tour }}"
-                                                    data-id="{{ $row->id }}" class="btn btn-danger mr-2 delete"><i
+                                                    data-slug="{{ $row->slug }}" class="btn btn-danger mr-2 delete"><i
                                                         class="fa-solid fa-trash" aria-hidden="true"></i>
                                                 </a>
                                             </div>
@@ -98,7 +98,7 @@
 
     <script>
         $('.delete').click(function() {
-            var id = $(this).attr('data-id')
+            var slug = $(this).attr('data-slug')
             var nama = $(this).attr('data-nama')
 
             swalWithBootstrapButtons.fire({
@@ -111,7 +111,7 @@
                 reverseButtons: true
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location = "/admin/hapus-tour/" + id
+                    window.location = "/admin/hapus-tour/" + slug
                     swalWithBootstrapButtons.fire(
                         'Deleted!',
                         'Paket Tour Berhasil di Hapus',

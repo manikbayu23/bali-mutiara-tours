@@ -93,7 +93,8 @@
                         href="{{ route('sewa-mobil') }}"><i class="fa-solid fa-car"></i>
                         <div class="link-text">Sewa Mobil</div>
                     </a></li>
-                <li><a class="side-link" href="/"><i class="fa-solid fa-newspaper"></i>
+                <li><a class="side-link {{ request()->routeIs('artikel') ? 'active' : '' }}"
+                        href="{{ route('artikel') }}"><i class="fa-solid fa-newspaper"></i>
                         <div class="link-text">Artikel</div>
                     </a></li>
             </ul>

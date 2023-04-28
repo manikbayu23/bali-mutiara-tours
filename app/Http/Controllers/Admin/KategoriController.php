@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class KategoriController extends Controller
 {
@@ -16,6 +17,8 @@ class KategoriController extends Controller
     public function index()
     {
         $kategori = Kategori::paginate(20);
+
+
 
         return view('admin.kategori', [
             'title' => 'Kategori Tour',
@@ -102,7 +105,8 @@ class KategoriController extends Controller
         $kategori->update($request->all());
 
 
-        return redirect()->route('kategori')
+
+        return redirect()->back()
             ->with('success', 'Kategori berhasil diperbarui.');
     }
 
@@ -116,6 +120,8 @@ class KategoriController extends Controller
     {
         $kategori = Kategori::find($id);
         $kategori->delete();
-        return redirect()->route('kategori')->with('success', 'Kategori Berhasil di Hapus');
+
+
+        return redirect()->back()->with('success', 'Kategori Berhasil di Hapus');
     }
 }

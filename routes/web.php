@@ -4,13 +4,14 @@ use App\Models\Kategori;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\ArtikelController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\SewaMobilViewController;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DestinasiController;
 use App\Http\Controllers\Admin\PaketTourController;
 use App\Http\Controllers\Admin\SewaMobilController;
-use App\Http\Controllers\SewaMobilViewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,4 +81,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/admin/tambah-mobil', [SewaMobilController::class, 'store'])->name('tambah-mobil');
     Route::get('/admin/hapus-mobil/{id}', [SewaMobilController::class, 'destroy'])->name('hapus-mobil');
     Route::post('/admin/update-mobil/{slug}', [SewaMobilController::class, 'update'])->name('update-mobil');
+
+    //Artikel
+    Route::get('/admin/artikel', [ArtikelController::class, 'index'])->name('artikel');
 });

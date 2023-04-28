@@ -6,6 +6,7 @@ use App\Models\Destinasi;
 use Illuminate\Http\Request;
 use GuzzleHttp\Promise\Create;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
 
 class DestinasiController extends Controller
 {
@@ -17,6 +18,9 @@ class DestinasiController extends Controller
     public function index()
     {
         $destinasi = Destinasi::paginate(20);
+
+
+
         return view('admin.destinasi', [
             'title' => 'Destinasi Tour',
             "description" => "Destinasi Tour",
@@ -102,8 +106,7 @@ class DestinasiController extends Controller
         $destinasi = Destinasi::findOrFail($id);
         $destinasi->update($request->all());
 
-
-        return redirect()->route('destinasi')
+        return redirect()->back()
             ->with('success', 'Destinasi berhasil diperbarui.');
     }
 
@@ -118,6 +121,6 @@ class DestinasiController extends Controller
         $destinasi = Destinasi::find($id);
         $destinasi->delete();
 
-        return redirect()->route('destinasi')->with('success', 'Destinasi Berhasil di Hapus');
+        return redirect()->back()->with('success', 'Destinasi Berhasil di Hapus');
     }
 }

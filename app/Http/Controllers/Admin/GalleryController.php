@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Session;
 
 
 class GalleryController extends Controller
@@ -20,6 +21,9 @@ class GalleryController extends Controller
     {
 
         $gambar = Gallery::paginate(12);
+
+        Session::put('url_gallery', request()->fullUrl());
+
         return view('admin.gallery', [
             'title' => 'Gallery Foto',
             "description" => "Halaman Gallery Foto",
@@ -120,6 +124,7 @@ class GalleryController extends Controller
         // Hapus data gambar dari database
         $image->delete();
 
-        return redirect()->route('gallery')->with('success', 'Gambar Berhasil di Hapus.');
+
+        return redirect()->back()->with('success', 'Gambar Berhasil di Hapus.');
     }
 }

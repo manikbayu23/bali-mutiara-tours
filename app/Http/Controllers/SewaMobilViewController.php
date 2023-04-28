@@ -10,7 +10,7 @@ class SewaMobilViewController extends Controller
 
     public function index()
     {
-        $data = SewaMobil::paginate(15);
+        $data = SewaMobil::paginate(18);
 
         return view('sewa-mobil-view', [
             "title" => "Sewa Mobil Dengan Sopir",
