@@ -89,7 +89,7 @@
                                     <td>
                                         <div class="d-flex gap-2">
                                             <button data-bs-toggle="modal" data-bs-target="#edit{{ $row->id }}"
-                                                class="btn btn-warning mr-2"><i class="fa-solid fa-pencil-square-o"
+                                                class="btn btn-warning mr-2"><i class="fa-solid fa-edit"
                                                     aria-hidden="true"></i>
                                                 Edit</button>
                                             <a href="#" data-nama="{{ $row->nama_mobil }}"

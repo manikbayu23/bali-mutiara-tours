@@ -66,8 +66,8 @@
                                                 <a href="{{ route('edit-tour', $row->slug) }}" class="btn btn-warning"><i
                                                         class="fa-solid fa-edit" aria-hidden="true"></i>
                                                 </a>
-                                                <a href="" data-nama="{{ $row->nama_tour }}"
-                                                    data-slug="{{ $row->slug }}" class="btn btn-danger mr-2 delete"><i
+                                                <a href="#" data-nama="{{ $row->nama_tour }}"
+                                                    data-slug="{{ $row->slug }}" class="delete btn btn-danger mr-2"><i
                                                         class="fa-solid fa-trash" aria-hidden="true"></i>
                                                 </a>
                                             </div>
