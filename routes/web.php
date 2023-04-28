@@ -57,7 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('/admin/archived-tour/{id}', [PaketTourController::class, 'archived'])->name('archived-tour');
     Route::get('/admin/edit-tour/{slug}', [PaketTourController::class, 'show'])->name('edit-tour');
     Route::post('/admin/update-tour/{slug}', [PaketTourController::class, 'update'])->name('update-tour');
-    Route::get('/admin/hapus-tour/{id}', [PaketTourController::class, 'destroy'])->name('hapus-tour');
+    Route::get('/admin/hapus-tour/{slug}', [PaketTourController::class, 'destroy'])->name('hapus-tour');
 
     //gallery
     Route::get('/admin/gallery', [GalleryController::class, 'index'])->name('gallery');
