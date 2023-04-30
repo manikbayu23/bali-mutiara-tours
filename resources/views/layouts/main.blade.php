@@ -128,7 +128,7 @@
                                 <li><span class="icon fa fa-map-marker"></span><span class="text">Jl. Kembang
                                         Matahari
                                         No. 3XX Denpasar, Bali</span></li>
-                                <li><a href="https://api.whatsapp.com/send?phone=6282133226622"><span
+                                <li><a href="https://api.whatsapp.com/send?phone=6287861184488"><span
                                             class="icon fa fa-phone"></span><span class="text">+62 821 3322
                                             6622 / 087 8611 84488</span></a></li>
                                 <li><a href="mailto:dewa@balimutiaratours.id?subject=Hai, Bali Mutiara Tours.."><span
@@ -162,7 +162,7 @@
         </div>
     </footer>
 
-    <a href="https://api.whatsapp.com/send?phone=6282133226622&amp;text=Hai,%20customer%20service%20Bali Mutiara Tours..."
+    <a href="https://api.whatsapp.com/send?phone=6287861184488&amp;text=Hai,%20customer%20service%20Bali Mutiara Tours..."
         target="blank" title="Klik untuk chat via Whatsapp" class="whatsapp">
         <div class="dot">.</div>
         <img src="{{ asset('umum/images/wa.png') }}" alt="">

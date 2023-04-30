@@ -367,7 +367,7 @@ function sendWhatsApp() {
 
     if (validateForm()) {
         var message = "Hai Bali Mutiara Tours, Saya ingin memesan " + namaPaket + "%0ANama: " + name + "%0ANomer WA: " + wa + "%0AEmail: " + email + "%0APaket Hotel: " + namaHotel + "%0ATanggal Perjalanan: " + tanggalPesanan + "%0AJumlah Peserta: " + jumlahPesanan + "%20Orang" + "%0ATerima kasih.";
-        var url = "https://wa.me/" + 6282133226622 + "?text=" + message;
+        var url = "https://wa.me/" + 6287861184488 + "?text=" + message;
         window.open(url);
     }
 }
