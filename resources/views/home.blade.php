@@ -9,11 +9,67 @@
                 <div class="col-md-7 ftco-animate">
                     <span class="subheading">Welcome to Bali Mutiara Tours</span>
                     <h1 class="mb-6">Temukan Tempat Liburan Favorit Anda Bersama Kami</h1>
-                    <a href="#paket-tour" class="btn bt-lihatPaket">Lihat Paket</a>
+                    <a href="{{ route('pengunjung.paket-tour') }}" class="btn bt-lihatPaket">Pesan Sekarang</a>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <section class="ftco-section" style="background-color: rgb(255, 255, 255);" id="paket-tour">
+        <div class="container">
+            <div class="row justify-content-center pb-4">
+                <div class="col-md-12 heading-section text-center ftco-animate">
+                    <span class="subheading">Paket Tour</span>
+                    <h2 class="mb-4">Paket Tour Terpopuler</h2>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 50px;">
+                @forelse ($tour as $card)
+                    <div class="col-md-4 ftco-animate">
+                        <div class="project-wrap">
+                            <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}" class="img"
+                                style="background-image: url(images/gallery/{{ $card->id_gambar }});">
+                                <span class="price">IDR {{ $card->harga_utama }}K/Person</span>
+                            </a>
+                            <div class="text p-4">
+                                <span class="days">{{ $card->durasi }}</span>
+                                <h3><a
+                                        href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">{{ $card->nama_tour }}</a>
+                                </h3>
+                                <p class="location"><span class="fa fa-map-marker"></span> {{ $card->lokasi }}</p>
+                                <ul>
+                                    @if ($card->rating == '5')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span></li>
+                                    @elseif($card->rating == '4')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span><span class="fa fa-star"></span></li>
+                                    @elseif($card->rating == '3')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span></li>
+                                    @elseif($card->rating == '2')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span></li>
+                                    @else
+                                        <li><span class="fa fa-star"></span></li>
+                                    @endif
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="alert alert-primary text-center">tidak ada paket tour</div>
+                @endforelse
+
+                <div class="ftco-animate text-right pb-4" style="width: 100%;">
+                    <a href="{{ route('pengunjung.paket-tour') }}" class=" btn btn-link ">Lihat Selengkapnya <i
+                            class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="ftco-section services-section" style="background-color: rgb(245, 245, 245);">
         <div class="container">
@@ -90,62 +146,6 @@
             </div>
         </div>
     </section>
-
-    <section class="ftco-section" style="background-color: rgb(255, 255, 255);" id="paket-tour">
-        <div class="container">
-            <div class="row justify-content-center pb-4">
-                <div class="col-md-12 heading-section text-center ftco-animate">
-                    <span class="subheading">Paket Tour</span>
-                    <h2 class="mb-4">Paket Tour Terpopuler</h2>
-                </div>
-            </div>
-            <div class="row" style="margin-bottom: 50px;">
-                @forelse ($tour as $card)
-                    <div class="col-md-4 ftco-animate">
-                        <div class="project-wrap">
-                            <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}" class="img"
-                                style="background-image: url(images/gallery/{{ $card->id_gambar }});">
-                                <span class="price">IDR {{ $card->harga_utama }}K/Person</span>
-                            </a>
-                            <div class="text p-4">
-                                <span class="days">{{ $card->durasi }}</span>
-                                <h3><a
-                                        href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">{{ $card->nama_tour }}</a>
-                                </h3>
-                                <p class="location"><span class="fa fa-map-marker"></span> {{ $card->lokasi }}</p>
-                                <ul>
-                                    @if ($card->rating == '5')
-                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
-                                                class="fa fa-star"></span><span class="fa fa-star"></span><span
-                                                class="fa fa-star"></span></li>
-                                    @elseif($card->rating == '4')
-                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
-                                                class="fa fa-star"></span><span class="fa fa-star"></span></li>
-                                    @elseif($card->rating == '3')
-                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
-                                                class="fa fa-star"></span></li>
-                                    @elseif($card->rating == '2')
-                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span></li>
-                                    @else
-                                        <li><span class="fa fa-star"></span></li>
-                                    @endif
-                                </ul>
-
-                            </div>
-                        </div>
-                    </div>
-                @empty
-                    <div class="alert alert-primary text-center">tidak ada paket tour</div>
-                @endforelse
-
-                <div class="ftco-animate text-right pb-4" style="width: 100%;">
-                    <a href="{{ route('pengunjung.paket-tour') }}" class=" btn btn-link ">Lihat Selengkapnya <i
-                            class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
 
     <section class="ftco-section testimony-section bg-bottom" style="background-image: url(umum/images/bg-1.jpg);">
         <div class="overlay"></div>

@@ -39,6 +39,38 @@
 
     <meta name="robots" content="index, follow">
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11097109091"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'AW-11097109091');
+    </script>
+
+    <!-- Event snippet for Kunjungan halaman conversion page -->
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11097109091/iJz4CJ3EwI0YEOPkwasp'
+        });
+    </script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTGYXN841"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5XTGYXN841');
+    </script>
 
     @yield('style')
 
