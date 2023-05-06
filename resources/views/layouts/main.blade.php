@@ -35,10 +35,10 @@
     <link rel="stylesheet" href="{{ asset('umum/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('umum/css/style.css') }}">
 
-    {{-- slider 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" />
---}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https:///cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
 
     <script src="{{ asset('js/share.js') }}"></script>
 
@@ -238,6 +238,7 @@
     <script src="{{ asset('umum/js/main.js') }}"></script>
 
     {{-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script> --}}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script>
         $(document).ready(function() {

@@ -1,10 +1,5 @@
 @extends('layouts.main')
 
-@section('style')
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-@endsection
-
 @section('content-main')
     <div class="slider-background">
         <div class="slider ">
@@ -162,121 +157,6 @@
         </div>
     </section>
 
-    {{-- <section class="ftco-section testimony-section bg-bottom" style="background-image: url(umum/images/bg-1.jpg);">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row justify-content-center pb-4">
-                <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-                    <span class="subheading">Testimonial</span>
-                    <h2 class="mb-4">Tourist Feedback</h2>
-                </div>
-            </div>
-            <div class="row ftco-animate">
-                <div class="col-md-12">
-                    <div class="carousel-testimony owl-carousel">
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="text">
-                                    <p class="star">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                    </p>
-                                    <p class="mb-4">FSaya sangat puas dengan jasa travel ini. Mereka sangat membantu
-                                        dalam perencanaan perjalanan saya dan selalu tersedia untuk menjawab pertanyaan
-                                        saya. Pelayanan mereka sangat cepat dan profesional.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/user.png)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Riana Dewi</p>
-                                            <span class="position"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="text">
-                                    <p class="star">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                    </p>
-                                    <p class="mb-4">Pelayanan yang cepat dan ramah dari staf travel membuat
-                                        perjalanan
-                                        saya sangat menyenangkan. Mereka membantu mengatur segala sesuatu dengan baik
-                                        dan memastikan saya tidak kesulitan. Saya sangat merekomendasikan perusahaan ini
-                                        kepada siapapun yang berencana pergi berlibur.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(umum/images/user.png)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Aditya Wijaya</p>
-                                            <span class="position"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="text">
-                                    <p class="star">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                    </p>
-                                    <p class="mb-4">Perjalanan yang luar biasa dalam segala hal. Dari pemesanan tiket
-                                        hingga akomodasi, semuanya diatur dengan baik oleh tim travel. Saya sangat
-                                        berterima kasih atas bantuan mereka dan pasti akan menggunakan jasa mereka
-                                        lagi..</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/user.png)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Ahmad Rizki</p>
-                                            <span class="position"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimony-wrap py-4">
-                                <div class="text">
-                                    <p class="star">
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                        <span class="fa fa-star"></span>
-                                    </p>
-                                    <p class="mb-4">Saya sangat berterima kasih kepada jasa travel ini karena membuat
-                                        perjalanan saya lancar dan menyenangkan. Mereka sangat membantu dalam
-                                        menyelesaikan masalah yang saya hadapi dan selalu tersedia untuk memberikan
-                                        bantuan. Saya akan merekomendasikan jasa ini kepada teman-teman saya.</p>
-                                    <div class="d-flex align-items-center">
-                                        <div class="user-img" style="background-image: url(images/user.png)"></div>
-                                        <div class="pl-3">
-                                            <p class="name">Iwan
-                                                Eko</p>
-                                            <span class="position"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-
     <section class="ftco-section" style="background-color: rgb(245, 245, 245);">
         <div class="container">
             <div class="col-md-12 heading-section text-center ftco-animate">
@@ -295,7 +175,6 @@
     </section>
 @endsection
 @section('script')
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         $(document).ready(function() {
             $('.slick-carousel').slick({
