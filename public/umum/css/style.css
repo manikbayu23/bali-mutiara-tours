@@ -582,7 +582,6 @@ pre code {
     .container {
         max-width: 540px;
     }
-
 }
 
 @media (min-width: 768px) {
@@ -12115,7 +12114,7 @@ h5,
 
 @media (max-width: 991.98px) {
     .ftco-navbar-light {
-        background: #343A40 !important;
+        background: #000000 !important;
         position: relative;
         top: 0;
         padding-top: 0;
@@ -14564,26 +14563,53 @@ textarea.form-control {
 .whatsapp {
     position: fixed;
     right: 0;
-    bottom: 120px;
-    z-index: 1999;
+    bottom: 80px;
+    z-index: 9999;
     padding: 10px;
     background-color: white;
     border-radius: 50% 0 0 50%;
     display: flex;
+    height: 70px;
     align-items: center;
     justify-content: start;
     width: 70px;
     transition: all 600ms ease-in-out;
-    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.20);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.75);
+    ;
 }
 
 .whatsapp img {
-    width: 55px;
+    width: 50px;
 }
 
+.whatsapp p {
+    display: none;
+    align-items: center;
+    transition: all 600ms ease-in-out;
+    justify-content: end;
+    box-shadow: #000000;
+
+}
+
+.whatsapp:hover p {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 5px;
+    margin-top: 15px;
+    color: green;
+    justify-content: end;
+    margin-left: 10px;
+
+}
 
 .whatsapp:hover {
-    background-color: whitesmoke;
+    padding: 10px 10px 10px 20px;
+    width: 160px;
+    border-radius: 50px 0 0 50px;
+    justify-content: start;
+
+
 }
 
 .garis {
@@ -14617,27 +14643,102 @@ textarea.form-control {
 }
 
 
+
+.isi-slider {
+    position: absolute;
+    z-index: -1;
+
+}
+
+.shadow-op {
+    background-color: #000;
+    opacity: 50%;
+    height: 200%;
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
 @media (max-width: 576px) {
-    .whatsapp {
-
-        z-index: 1999;
-        padding: 10px;
-        background-color: white;
-        border-radius: 50% 0 0 50%;
-        width: 55px;
-
-    }
-
-    .whatsapp img {
-        width: 40px;
-    }
-
-    .dot {
-
-        bottom: 20px;
-        right: 2px;
-
+    .isi-slider {
+        width: 100%;
+        left: 0;
     }
 
 
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+
+
+}
+
+
+
+.slider-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    background-position: center center;
+    background-size: cover;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slick-carousel div {
+    width: 100%;
+    height: 600px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Media query untuk perangkat mobile */
+@media screen and (max-width: 480px) {
+    .slick-carousel div {
+        height: 200px;
+    }
+}
+
+/* Media query untuk perangkat tablet */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .slick-carousel div {
+        height: 300px;
+    }
+}
+
+/* Media query untuk perangkat desktop */
+@media screen and (min-width: 769px) {
+    .slick-carousel div {
+        height: 500px;
+    }
 }

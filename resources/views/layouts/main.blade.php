@@ -13,7 +13,7 @@
 
     <meta name="keywords" content="{{ $keywords }}">
 
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/logo-travel-1.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('umum/images/logo-travel-1.png') }}">
 
     <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
 
@@ -34,6 +34,11 @@
 
     <link rel="stylesheet" href="{{ asset('umum/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('umum/css/style.css') }}">
+
+    {{-- slider 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css" />
+--}}
 
     <script src="{{ asset('js/share.js') }}"></script>
 
@@ -103,7 +108,8 @@
                     <li class="nav-item {{ request()->routeIs('pengunjung.sewa-mobil') ? 'active' : '' }}"><a
                             href="{{ route('pengunjung.sewa-mobil') }}" class="nav-link">Sewa Mobil</a>
                     </li>
-                    <li class="nav-item"><a href="artikel.html" class="nav-link">Artikel</a></li>
+                    <li class="nav-item {{ request()->routeIs('pengunjung.gallery') ? 'active' : '' }}"><a
+                            href="{{ route('pengunjung.gallery') }}" class="nav-link">Gallery</a></li>
                     <li class="nav-item {{ request()->routeIs('pengunjung.kontak') ? 'active' : '' }}"><a
                             href="{{ route('pengunjung.kontak') }}" class="nav-link">Kontak</a></li>
                 </ul>
@@ -120,48 +126,31 @@
                 <div class="col-md pt-5">
                     <div class="ftco-footer-widget pt-md-5 mb-4">
                         <h2 class="ftco-heading-2">About</h2>
-                        <p>Berdiri sejak 19 Juli 1969, CV Mutiara Holiday dipercaya sebagai salah satu travel agent
+                        <p>Berdiri sejak 19 Juli 1969, Bali Mutiara Tours dipercaya sebagai salah satu travel agent
                             terbesar di Indonesia. Di bawah nama brand Mutiara, kami memiliki lebih dari 90 cabang yang
                             tersebar di kota-kota besar seluruh Indonesia. Setiap tahunnya beberapa penghargaan
-                            bergengsi telah berhasil didapatkan oleh Mutiara Holiday.</p>
+                            bergengsi telah berhasil didapatkan oleh Bali Mutiara Tours.</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft">
                             <!-- <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li> -->
                             <li class="ftco-animate"><a href="https://www.facebook.com/dewa.putra.5245"><span
                                         class="fa fa-facebook"></span></a></li>
                             <li class="ftco-animate"><a href="https://www.instagram.com/mutiaratimurholidays/"><span
                                         class="fa fa-instagram"></span></a></li>
+                            <li class="ftco-animate"><a
+                                    href="https://www.youtube.com/channel/UCs-sLDIkcPZNfNwF4PJcEEg"><span
+                                        class="fa fa-youtube"></span></a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md pt-5 border-left">
-                    <div class="ftco-footer-widget pt-md-5 mb-4 ml-md-5">
-                        <h2 class="ftco-heading-2">Artikel Terbaru</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="py-2 d-block">Rekomendasi Restoran Terbaik di Bali</a></li>
-                            <!-- <li><a href="#" class="py-2 d-block">General Enquiries</a></li> -->
 
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md pt-5 border-left">
-                    <div class="ftco-footer-widget pt-md-5 mb-4">
-                        <h2 class="ftco-heading-2">Destinasi</h2>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="py-2 d-block">Bali</a></li>
-                            <li><a href="#" class="py-2 d-block">Lombok</a></li>
-                            <li><a href="#" class="py-2 d-block">Nusa Penida</a></li>
-                        </ul>
-                    </div>
-                </div>
                 <div class="col-md pt-5 border-left">
                     <div class="ftco-footer-widget pt-md-5 mb-4">
                         <h2 class="ftco-heading-2">Hubungi Kami</h2>
                         <div class="block-23 mb-3">
                             <ul>
                                 <p>Bali</p>
-                                <li><span class="icon fa fa-map-marker"></span><span class="text">Jl. Kembang
-                                        Matahari
-                                        No. 3XX Denpasar, Bali</span></li>
+                                <li><span class="icon fa fa-map-marker"></span><span class="text">Jl. Jaya Giri XI
+                                        No. 19, Denpasar, Bali</span></li>
                                 <li><a href="https://api.whatsapp.com/send?phone=6287861184488"><span
                                             class="icon fa fa-phone"></span><span class="text">+62 821 3322
                                             6622 / 087 8611 84488</span></a></li>
@@ -247,6 +236,23 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="{{ asset('umum/js/google-map.js') }}"></script>
     <script src="{{ asset('umum/js/main.js') }}"></script>
+
+    {{-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script> --}}
+
+    <script>
+        $(document).ready(function() {
+            var slideCount = $('.slide').length;
+            var currentSlide = 0;
+
+            function nextSlide() {
+                $('.slide').eq(currentSlide).removeClass('active');
+                currentSlide = (currentSlide + 1) % slideCount;
+                $('.slide').eq(currentSlide).addClass('active');
+            }
+
+            setInterval(nextSlide, 4000);
+        });
+    </script>
     @yield('script')
 
 </body>

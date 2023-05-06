@@ -169,7 +169,6 @@
                             <strong> {{ $destinasi->nama_destinasi }}</strong> ,
                         @endforeach
                     </p>
-
                 </div>
 
                 <!-- .col-md-8 -->

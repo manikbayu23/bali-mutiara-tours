@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DestinasiController;
 use App\Http\Controllers\Admin\PaketTourController;
 use App\Http\Controllers\Admin\SewaMobilController;
+use App\Http\Controllers\GalleryPengunjungController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,9 +37,12 @@ Route::get('/sewa-mobil', [SewaMobilViewController::class, 'index'])->name('peng
 Route::get('/paket-tour', [HomeController::class, 'paket_tour'])->name('pengunjung.paket-tour');
 Route::get('/paket-tour/{slug}', [HomeController::class, 'show'])->name('pengunjung.paket-tour.show');
 
+//gallery
+Route::get('/gallery', [GalleryPengunjungController::class, 'index'])->name('pengunjung.gallery');
 
 //Kontak
 Route::get('/kontak', [HomeController::class, 'kontak'])->name('pengunjung.kontak');
+
 
 //Login Admin
 Route::get('/admin/login', [LoginController::class, 'index'])->name('login');

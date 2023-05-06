@@ -2,8 +2,17 @@
 
 
 @section('content-main')
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('umum/images/bg-12.jpg');">
-        <div class="overlay"></div>
+    <div class="slider-background">
+        <div class="slider ">
+            <div class="slide active hero-wrap-2 js-fullheight" style="background-image: url('umum/images/tirta-empul.jpg')">
+            </div>
+            <div class="slide  hero-wrap-2 js-fullheight" style="background-image: url('umum/images/bg-17.jpg')"></div>
+            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/tari-kecak3.jpg')"></div>
+            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/rafting-3.jpg')"></div>
+            <div class="slide  hero-wrap-2 js-fullheight" style="background-image: url('umum/images/pura-danu.jpg')">
+            </div>
+        </div>
+        <div class="shadow-op"></div>
         <div class="container">
             <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate pb-5 text-center">
@@ -15,7 +24,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     <section class="ftco-section ftco-no-pb contact-section mb-4">
         <div class="container">
@@ -26,8 +35,8 @@
                             <span class="fa fa-map-marker"></span>
                         </div>
                         <h3 class="mb-2">Alamat</h3>
-                        <p>Jl. Kembang Matahari
-                            No. 3XX Denpasar, Bali</p>
+                        <p>Jl. Jaya Giri XI
+                            No. 19, Denpasar, Bali</p>
                     </div>
                 </div>
                 <div class="col-md-3 d-flex">
@@ -66,35 +75,12 @@
 
     <section class="ftco-section contact-section ftco-no-pt">
         <div class="container">
-            <div class="row block-9">
-                <div class="col-md-6 order-md-last d-flex">
-                    <form action="mailto:dewa@balimutiaratours.id" method="post" enctype="text/plain"
-                        class="bg-light p-5 contact-form">
-                        <div class="form-group">
-                            <input type="text" id="name" class="form-control" placeholder="Your Name"
-                                name="nama">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="email" class="form-control" placeholder="Your Email"
-                                name="email">
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" class="form-control" placeholder="Subject" name="subjek">
-                        </div>
-                        <div class="form-group">
-                            <textarea name="pesan" id="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-                        </div>
-                    </form>
-                    <div class="alert alert-success" role="alert" style="display:none">
-                        Pesan Anda berhasil dikirim!
-                    </div>
-                </div>
-
-                <div class="col-md-6 d-flex">
-                    <div id="map" class="bg-white"></div>
+            <div class="row">
+                <div class="col d-flex">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3944.2893836751696!2d115.2230486751723!3d-8.664004688171726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd24164b3a36f89%3A0xf9dda403422036fc!2sBali%20Mutiara%20Tours!5e0!3m2!1sid!2sid!4v1683345466387!5m2!1sid!2sid"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>

@@ -1,18 +1,26 @@
 @extends('layouts.main')
 @section('content-main')
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('umum/images/sewa-mobil.jpg');">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
-                <div class="col-md-9 ftco-animate pb-5 text-center">
-                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i
-                                    class="fa fa-chevron-right"></i></a></span> <span>Sewa Mobil <i
-                                class="fa fa-chevron-right"></i></span></p>
-                    <h1 class="mb-0 bread">Sewa Mobil Dengan Sopir</h1>
-                </div>
+    <div class="slider-background">
+        <div class="slider ">
+            <div class="slide active hero-wrap-2 js-fullheight" style="background-image: url('umum/images/tari-kecak3.jpg')">
+            </div>
+            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/bg-17.jpg')"></div>
+            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/tirta-empul.jpg')"></div>
+            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/rafting-3.jpg')"></div>
+            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/pura-danu.jpg')">
             </div>
         </div>
-    </section>
+        <div class="shadow-op"></div>
+        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
+            <div class="col-md-9 ftco-animate pb-5 text-center">
+                <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i
+                                class="fa fa-chevron-right"></i></a></span> <span>Sewa Mobil <i
+                            class="fa fa-chevron-right"></i></span></p>
+                <h1 class="mb-0 bread">Sewa Mobil Dengan Sopir</h1>
+            </div>
+        </div>
+    </div>
+    </div>
 
     <section class="ftco-section">
         <div class="container">
