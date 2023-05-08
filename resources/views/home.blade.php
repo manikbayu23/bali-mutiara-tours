@@ -24,6 +24,24 @@
 
 
 
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <a href="{{ route('pengunjung.paket-tour.show', 'paket-tour-bali-4-hari-3-malam') }}">
+                        <img src="{{ asset('gambar/banner-promosi.png') }}" width="100%" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="ftco-section" style="background-color: rgb(255, 255, 255);" id="paket-tour">
         <div class="container">
             <div class="row justify-content-center pb-4">
@@ -227,6 +245,12 @@
                 ]
             });
 
+        });
+
+        $(document).ready(function() {
+            setTimeout(function() {
+                $('#myModal').modal('show');
+            }, 5000);
         });
     </script>
 @endsection
