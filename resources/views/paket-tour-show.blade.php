@@ -310,21 +310,24 @@
                         </div>
                         <div class="p-1 bg-white w-100 mt-4"></div>
                         <h3 class="mt-4">Anda Mungkin Juga Suka</h3>
-                        <div class="block-21 mb-4 d-flex">
-                            <a class="blog-img mr-4"
-                                style="background-image: url(../images/destianasi-hits/attlas.jpg);"></a>
-                            <div class="text">
-                                <h3 class="heading"><a href="artikel-2.html">Destinasi Wisata Di Bali Yang Hits & Populer
-                                        Buat
-                                        Liburan</a>
-                                </h3>
-                                <div class="meta">
-                                    <div><a href="#"><span class="fa fa-calendar"></span> Februari 15, 2023</a>
+                        @foreach ($datatours as $data)
+                            <div class="block-21 mb-4 d-flex">
+                                <a class="blog-img mr-4"
+                                    style="background-image: url(../images/gallery/{{ $data->id_gambar }});"></a>
+                                <div class="text">
+                                    <h3 class="heading"><a
+                                            href="{{ route('pengunjung.paket-tour.show', $data->slug) }}">{{ $data->nama_tour }}</a>
+                                    </h3>
+                                    <div class="meta">
+                                        <div><a href="#"><span class="fa fa-calendar"></span>
+                                                {{ date('d/m/Y', strtotime($data->created_at)) }}
+                                            </a>
+                                        </div>
+                                        <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
                                     </div>
-                                    <div><a href="#"><span class="fa fa-user"></span> Admin</a></div>
                                 </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
