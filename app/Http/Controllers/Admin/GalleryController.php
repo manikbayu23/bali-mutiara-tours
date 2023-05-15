@@ -60,7 +60,7 @@ class GalleryController extends Controller
     
         $imageName = $timestamp . '-' . Str::slug(pathinfo($originalName, PATHINFO_FILENAME)) . '.' . $extension;
     
-        $image->storeAs('public_html/images/gallery', $imageName);
+        $image->storeAs('public/images/gallery', $imageName);
     
         $gallery = new Gallery();
         $gallery->gambar = $imageName;
