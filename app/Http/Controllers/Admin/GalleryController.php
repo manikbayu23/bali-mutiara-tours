@@ -20,7 +20,7 @@ class GalleryController extends Controller
     public function index()
     {
 
-        $gambar = Gallery::paginate(12);
+        $gambar = Gallery::paginate(18);
 
         Session::put('url_gallery', request()->fullUrl());
 
