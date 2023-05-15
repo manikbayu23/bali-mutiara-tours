@@ -51,25 +51,25 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $image = $request->file('file');
-
+    
         $originalName = $image->getClientOriginalName();
-
+    
         $extension = $image->getClientOriginalExtension();
-
+    
         $timestamp = round(microtime(true) * 1000); // generate unique timestamp
-
+    
         $imageName = $timestamp . '-' . Str::slug(pathinfo($originalName, PATHINFO_FILENAME)) . '.' . $extension;
-
-        $image->move(public_path('images/gallery'), $imageName);
-
-        $image = new Gallery();
-        $image->gambar = $imageName;
-        $image->save();
-
-
+    
+        $image->storeAs('public_html/images/gallery', $imageName);
+    
+        $gallery = new Gallery();
+        $gallery->gambar = $imageName;
+        $gallery->save();
+    
         return response()->json(['success' => $imageName]);
     }
-
+    
+    
     /**
      * Display the specified resource.
      *
