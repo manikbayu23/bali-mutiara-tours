@@ -10,7 +10,7 @@ class GalleryPengunjungController extends Controller
 {
     public function index()
     {
-        $gambar = Gallery::paginate(12);
+        $gambar = Gallery::paginate(20);
 
         return view('gallery-pengunjung', [
             'title' => 'Gallery Foto',
