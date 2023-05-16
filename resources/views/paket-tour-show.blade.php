@@ -163,15 +163,15 @@
                             Transfer in/out bandara
                         </li>
                         <li>Hotel</li>
-                        <li>Makan pagi, siang, dan makan malam</li>
+                        <li>Makan pagi, makan siang, dan makan malam</li>
                         <li>Tiket masuk obyek wisata</li>
                         <li>Lokal guide</li>
                         <li>Mineral water</li>
                     </ol>
-                    <h2>Harga Belum Termasuk :</h2>
+                    <h2><strong>Harga Belum Termasuk :</strong></h2>
                     <ol>
                         <li>Tiket pesawat</li>
-                        <li>Pengeluaran pribadi spt : telp room, mini bar dan laundry</li>
+                        <li>Pengeluaran pribadi seperti : telp room, mini bar dan laundry</li>
                         <li>Tips guide & sopir</li>
                     </ol>
                     <div class="tombol-2 mb-4">

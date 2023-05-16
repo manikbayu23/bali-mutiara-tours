@@ -169,7 +169,7 @@
                     <div class="alert alert-primary text-center">tidak ada paket tour</div>
                 @endforelse
             </div>
-            <div class="row mt-5">
+            <div class="row mt-5 justify-content-center">
                 <div class="col text-center">
                     {{ $tours->links() }}
                 </div>
