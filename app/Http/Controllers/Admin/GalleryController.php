@@ -52,24 +52,24 @@ class GalleryController extends Controller
     {
         $image = $request->file('file');
 
-    $originalName = $image->getClientOriginalName();
+        $originalName = $image->getClientOriginalName();
 
-    $extension = $image->getClientOriginalExtension();
+        $extension = $image->getClientOriginalExtension();
 
-    $timestamp = round(microtime(true) * 1000); // generate unique timestamp
+        $timestamp = round(microtime(true) * 1000); // generate unique timestamp
 
-    $imageName = $timestamp . '-' . Str::slug(pathinfo($originalName, PATHINFO_FILENAME)) . '.' . $extension;
+        $imageName = $timestamp . '-' . Str::slug(pathinfo($originalName, PATHINFO_FILENAME)) . '.' . $extension;
 
-    $image->move(public_path('images/gallery'), $imageName);
+        $image->move(public_path('images/gallery'), $imageName);
 
-    $gallery = new Gallery();
-    $gallery->gambar = $imageName;
-    $gallery->save();
+        $gallery = new Gallery();
+        $gallery->gambar = $imageName;
+        $gallery->save();
 
-    return response()->json(['success' => $imageName]);
+        return response()->json(['success' => $imageName]);
     }
-    k
-    
+
+
     /**
      * Display the specified resource.
      *
