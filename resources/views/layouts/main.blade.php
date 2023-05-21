@@ -38,43 +38,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="https:///cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
-
-    <script src="{{ asset('js/share.js') }}"></script>
-
     <meta name="robots" content="index, follow">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11097109091"></script>
-
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'AW-11097109091');
-    </script>
-
-    <!-- Event snippet for Kunjungan halaman conversion page -->
-    <script>
-        gtag('event', 'conversion', {
-            'send_to': 'AW-11097109091/iJz4CJ3EwI0YEOPkwasp'
-        });
-    </script>
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTGYXN841"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-5XTGYXN841');
-    </script>
 
     @yield('style')
 
@@ -85,7 +49,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" style="display: flex; align-items:center" href="/"><img
-                    src="{{ asset('umum/images/logo-travel-1.png') }}" width="60px" class="img-fluid" alt="">
+                    src="{{ asset('umum/images/logo-travel-1.png') }}" width="50px" class="img-fluid" alt="">
                 <div class="ml-2"> Bali
                     Mutiara<span>Tours</span></div>
             </a>
@@ -101,7 +65,7 @@
                     <li
                         class="nav-item {{ request()->routeIs('pengunjung.paket-tour', 'pengunjung.paket-tour.show*') ? 'active' : '' }}">
                         <a class="nav-link " href="{{ route('pengunjung.paket-tour') }}">
-                            Paket Tour
+                            Tour
                         </a>
                     </li>
                     <li class="nav-item {{ request()->routeIs('pengunjung.sewa-mobil') ? 'active' : '' }}"><a
@@ -203,12 +167,6 @@
 
     <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            $('.ckeditor').ckeditor();
-        });
-    </script>
-
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
@@ -222,7 +180,6 @@
     </script>
     <script src="{{ asset('umum/js/jquery.min.js') }}"></script>
     <script src="{{ asset('umum/js/jquery-migrate-3.0.1.min.js') }}"></script>
-    <script src="{{ asset('umum/js/popper.min.js') }}"></script>
     <script src="{{ asset('umum/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('umum/js/jquery.easing.1.3.js') }}"></script>
     <script src="{{ asset('umum/js/jquery.waypoints.min.js') }}"></script>
@@ -232,27 +189,40 @@
     <script src="{{ asset('umum/js/jquery.animateNumber.min.js') }}"></script>
     <script src="{{ asset('umum/js/bootstrap-datepicker.js') }}"></script>
     <script src="{{ asset('umum/js/scrollax.min.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    <script src="{{ asset('umum/js/google-map.js') }}"></script>
     <script src="{{ asset('umum/js/main.js') }}"></script>
 
     {{-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11097109091"></script>
+
     <script>
-        $(document).ready(function() {
-            var slideCount = $('.slide').length;
-            var currentSlide = 0;
+        window.dataLayer = window.dataLayer || [];
 
-            function nextSlide() {
-                $('.slide').eq(currentSlide).removeClass('active');
-                currentSlide = (currentSlide + 1) % slideCount;
-                $('.slide').eq(currentSlide).addClass('active');
-            }
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-            setInterval(nextSlide, 4000);
-        });
+        gtag('config', 'AW-11097109091');
     </script>
+
+    <!-- Event snippet for Kunjungan halaman conversion page -->
+
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTGYXN841"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5XTGYXN841');
+    </script>
+
     @yield('script')
 
 </body>

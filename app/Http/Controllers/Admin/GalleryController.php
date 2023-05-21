@@ -25,7 +25,7 @@ class GalleryController extends Controller
         Session::put('url_gallery', request()->fullUrl());
 
         return view('admin.gallery', [
-            'title' => 'Gallery Foto',
+            "title" => "Gallery Foto",
             "description" => "Halaman Gallery Foto",
             "keywords" => "Gallery Foto"
 

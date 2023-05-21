@@ -1,35 +1,85 @@
 @extends('layouts.main')
 
 @section('style')
+    <link rel="stylesheet" href="{{ asset('umum/lightbox/css/lightbox.css') }}">
+
     <link rel="stylesheet" href="{{ asset('umum/css/style2.css') }}">
     <style>
         p,
         li {
             color: #343A40;
+            text-align: left;
         }
+
 
         .h-2 {
             font-size: 26px;
-            color: black;
+            color: rgb(199, 12, 12);
+            font-weight: 600;
+        }
+
+        .nama-produk {
+            font-size: 24px;
+        }
+
+        .item-produk {
+            font-size: 16px
+        }
+
+        .harga-produk {
+            font-size: 18px
+        }
+
+        @media (max-width: 912px) {
+
+
+            .nama-produk {
+                font-size: 24px;
+            }
+
+
+            .tour-desk h1 {
+                font-size: 18px;
+
+            }
+
+
+            .h-2 {
+                font-size: 26px;
+
+            }
+
+            .harga-produk {
+                font-size: 14px
+            }
+
+            p,
+            li,
+            a {
+                font-size: 18px;
+            }
+
+
         }
 
         @media (max-width: 576px) {
 
-
-            .h-1 {
-                font-size: 26px;
-
+            .tour-desk h1 {
+                font-size: 16px !important;
             }
 
-            h1 strong {
-                font-size: 26px;
-
+            .tour-desk h2 {
+                font-size: 14px !important;
             }
 
-            h2 strong {
-                font-size: 20px;
-
+            .nama-produk {
+                font-size: 18px;
             }
+
+            .item-produk {
+                font-size: 14px
+            }
+
 
             .h-2 {
                 font-size: 20px;
@@ -42,19 +92,30 @@
                 font-size: 12px;
             }
 
+            .bintang {
+                font-size: 12px;
+            }
+
+            .social-links a {
+                font-size: 5px !important;
+            }
         }
 
         .tour-desk h1 {
-            font-size: 2rem;
+            font-size: 24px;
             padding: 10px;
             border-left: 10px solid #343A40;
             margin-bottom: 20px;
         }
 
         .tour-desk h2 {
-            font-size: 1.5rem;
+            font-size: 18px;
             padding: 10px;
             background-color: rgb(247, 247, 247);
+        }
+
+        .slider-slick {
+            height: 100px
         }
     </style>
 @endsection
@@ -62,56 +123,150 @@
 @section('content-main')
     <section class="foto bg-dark">
     </section>
-    <div class="container mt-3 mb-3">
-        <a href="{{ route('pengunjung.paket-tour') }}" class="tombol-back h5 text-primary"><i
-                class="fa fa-solid fa-arrow-left"></i>
-            Kembali</a>
-    </div>
+
     <section class="ftco-section ftco-no-pt ftco-no-pb bg-light content ">
-        <div class="container bg-white p-5 shadow">
+        <div class="container bg-white p-3 mt-2 shadow">
             <div class="row">
-                <div class="col-lg-6 col-md-12 col-sm-12 rounded-4">
-                    <img class="img-fluid shadow-sm" width="500px" src="{{ asset('images/gallery/' . $tour->id_gambar) }}">
+                <div class="col-lg-6 col-md-6 col-sm-12 rounded-4">
+                    <div class="slider-for mb-2">
+                        <a href="{{ asset('images/gallery/' . $tour->id_gambar) }}" data-lightbox="-" data-title="-">
+                            <div class="item-for" style="background-image: url('/images/gallery/{{ $tour->id_gambar }}');">
+                            </div>
+                        </a>
+
+                        @if ($tour->lokasi == 'Bali')
+                            <a href="{{ asset('../gambar/rafting.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/rafting.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/sawah.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/sawah.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/ayunan.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/ayunan.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/tari-barong.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/tari-barong.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/tirta-empul.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/tirta-empul.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/jimbaran.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/jimbaran.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/mongkey-forest.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/mongkey-forest.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/atv-ride.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/atv-ride.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/attlas.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/attlas.jpg');"></div>
+                            </a>
+                        @elseif ($tour->lokasi == 'Lombok')
+                            <a href="{{ asset('../gambar/lombok-6.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/lombok-6.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/lombok-9.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/lombok-9.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/taliwang.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/taliwang.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/suku-sasak.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/suku-sasak.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/lombok-14.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/lombok-14.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/suku-sasak-2.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/suku-sasak-2.jpg');"></div>
+                            </a>
+                        @elseif ($tour->lokasi == 'Nusa Penida')
+                            <a href="{{ asset('../gambar/diving-2.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/diving-2.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/billabong.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/billabong.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/broken-beach.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/broken-beach.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar//nusa-penida-taman.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/nusa-penida-taman.jpg');">
+                                </div>
+                            </a>
+                            <a href="{{ asset('../gambar/bg-18.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/bg-18.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/nuspen-4.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/nuspen-4.jpg');"></div>
+                            </a>
+                            <a href="{{ asset('../gambar/pulau-seribu.jpg') }}" data-lightbox="-" data-title="-">
+                                <div class="item-for" style="background-image: url('../gambar/pulau-seribu.jpg');"></div>
+                            </a>
+                        @endif
+
+
+                    </div>
+                    <div class="slider-nav">
+                        <div class="item-nav" style="background-image: url('../images/gallery/{{ $tour->id_gambar }}');">
+                        </div>
+
+                        @if ($tour->lokasi == 'Bali')
+                            <div class="item-nav" style="background-image: url('../gambar/rafting.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/sawah.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/ayunan.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/tari-barong.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/tirta-empul.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/jimbaran.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/mongkey-forest.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/atv-ride.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/attlas.jpg');"></div>
+                        @elseif ($tour->lokasi == 'Lombok')
+                            <div class="item-nav" style="background-image: url('../gambar/lombok-6.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/lombok-9.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/taliwang.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/suku-sasak.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/lombok-14.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/suku-sasak-2.jpg');"></div>
+                        @elseif ($tour->lokasi == 'Nusa Penida')
+                            <div class="item-nav" style="background-image: url('../gambar/diving-2.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/billabong.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/broken-beach.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/nusa-penida-taman.jpg');">
+                            </div>
+                            <div class="item-nav" style="background-image: url('../gambar/bg-18.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/nuspen-4.jpg');"></div>
+                            <div class="item-nav" style="background-image: url('../gambar/pulau-seribu.jpg');"></div>
+                        @endif
+
+                    </div>
+
                 </div>
                 <div class="col">
-                    <h1 class="h-1"><b>{{ $tour->nama_tour }}</b></h1>
-                    <div class="text-secondary mb-3"><i class="fa fa-map-marker"></i> {{ $tour->lokasi }}<i
-                            style="margin-left: 20px;" class="fa fa-clock-o"></i> {{ $tour->durasi }} <i
-                            class="fa fa-solid fa-map-pin ml-3"></i> {{ $total_destinasi }} destinasi</div>
-
-                    <div class="h-2"><b>IDR {{ $tour->harga_utama }}K</b></div>
-                    <div class="d-flex">
-                        <div class="col-4 bintang"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
-                                aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
+                    <h1 class="nama-produk"><b>{{ $tour->nama_tour }}</b></h1>
+                    <div class="d-flex align-items-center">
+                        <div class="bintang d-flex align-items-center mr-3"><i class="fa fa-star"
+                                aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i
+                                class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star"
                                 aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i>
                         </div>
-                        <div id="social-links" class="d-flex justify-content-end  col">
-                            <ul>
-                                <a class="mr-2"><i> Share : </i></a>
-                                <a class="text-danger h6 mr-2"
-                                    href="https://www.instagram.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
-                                    target="_blank"><span class="fa fa-instagram"></span></a>
-
-                                <a class="text-primary h6 mr-2"
-                                    href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
-                                    target="_blank"><span class="fa fa-facebook-official"></span></a>
-
-                                <a class="text-info h6 mr-2"
-                                    href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($tour->nama_tour) }}"
-                                    target="_blank"><span class="fa fa-twitter"></span></a></a>
-
-                                <a class="text-secondary h6 mr-2"
-                                    href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(url()->current()) }}&summary=Extra linkedin summary can be passed here"
-                                    target="_blank"><span class="fa fa-linkedin"></span></a>
-
-                                <a class="text-success h6"
-                                    href="https://wa.me/?text={{ urlencode(url()->current()) }} - {{ urlencode($tour->nama_tour) }}"
-                                    target="_blank"><span class="fa fa-whatsapp"></span></a>
-
-                            </ul>
-                        </div>
+                        <div class="text-dark mb-3 item-produk "><i class="fa fa-map-marker"></i> {{ $tour->lokasi }}<i
+                                style="margin-left: 20px;" class="fa fa-clock-o"></i> {{ $tour->durasi }} </div>
                     </div>
-                    <div class="row tombol1">
+
+                    <div class="d-flex align-items-center mb-4">
+                        @if ($tour->harga_diskon == null)
+                            <div class="h-2">Rp{{ $tour->harga_utama }}K</div>
+                        @else
+                            <div class="harga-produk mr-3"><del>Rp{{ $tour->harga_utama }}K </del></div>
+                            <div class="h-2">Rp{{ $tour->harga_diskon }}K</div>
+                        @endif
+
+                    </div>
+                    <img src="{{ asset('gambar/garansi.png') }}" class="img-fluid mb-3" width="150px" alt="">
+
+                    <div class="row tombol1 mb-3">
                         <button class="btn bt-list" data-toggle="modal" data-target="#exampleModal" type="button"
                             id="myBtn"><i class="fa fa-money" aria-hidden="true"></i>
 
@@ -121,15 +276,39 @@
                             Pesan Sekarang</a>
 
                     </div>
+                    <div id="social-links" class="d-flex align-items-center justify-content-end">
+                        <ul>
+                            <a class=""><i> Share : </i></a>
+                            <a class="text-danger h6 mr-2"
+                                href="https://www.instagram.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
+                                target="_blank"><span class="fa fa-instagram"></span></a>
 
+                            <a class="text-primary h6 mr-2"
+                                href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(url()->current()) }}"
+                                target="_blank"><span class="fa fa-facebook-official"></span></a>
+
+                            <a class="text-info h6 mr-2"
+                                href="https://twitter.com/intent/tweet?url={{ urlencode(url()->current()) }}&text={{ urlencode($tour->nama_tour) }}"
+                                target="_blank"><span class="fa fa-twitter"></span></a></a>
+
+                            <a class="text-secondary h6 mr-2"
+                                href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(url()->current()) }}&summary=Extra linkedin summary can be passed here"
+                                target="_blank"><span class="fa fa-linkedin"></span></a>
+
+                            <a class="text-success h6"
+                                href="https://wa.me/?text={{ urlencode(url()->current()) }} - {{ urlencode($tour->nama_tour) }}"
+                                target="_blank"><span class="fa fa-whatsapp"></span></a>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
 
-    <div class="modal fade" style="z-index: 9999; " tabindex="-1" id="exampleModal" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" style="z-index: 9999; " tabindex="-1" id="exampleModal"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -147,33 +326,38 @@
 
 
     <section class="ftco-section ftco-no-pt ftco-no-pb bg-light tour-desk mt-3 mb-3">
-        <div class="container p-lg-5 p-sm-1 p-md-4 bg-white shadow">
+        <div class="container p-lg-5 p-4 bg-white shadow">
             <div class="row">
-                <div class="col-lg-8 ftco-animate py-md-5 mt-md-5 pt-4 mt-lg-1">
+                <div class="col-lg-8 ftco-animate py-md-5  pt-2 mt-lg-1">
                     <div class="text-justify">
                         {!! $tour->deskripsi !!}
                     </div>
-                    <h2>
-                        <strong>
-                            Harga Sudah Termasuk :
-                        </strong>
-                    </h2>
-                    <ol>
-                        <li>
-                            Transfer in/out bandara
-                        </li>
-                        <li>Hotel</li>
-                        <li>Makan pagi, makan siang, dan makan malam</li>
-                        <li>Tiket masuk obyek wisata</li>
-                        <li>Lokal guide</li>
-                        <li>Mineral water</li>
-                    </ol>
-                    <h2><strong>Harga Belum Termasuk :</strong></h2>
-                    <ol>
+
+                    @if ($tour->lokasi == 'Bali' || $tour->lokasi == 'Lombok')
+                        <h2>
+                            <strong>
+                                HARGA SUDAH TERMASUK
+                            </strong>
+                        </h2>
+                        <ul>
+                            <li>
+                                Transfer in/out bandara
+                            </li>
+                            <li>Hotel</li>
+                            <li>Makan pagi, makan siang, dan makan malam</li>
+                            <li>Tiket masuk obyek wisata</li>
+                            <li>Lokal guide</li>
+                            <li>Mineral water</li>
+                        </ul>
+                    @else
+                    @endif
+
+                    <h2><strong>HARGA BELUM TERMASUK </strong></h2>
+                    <ul>
                         <li>Tiket pesawat</li>
                         <li>Pengeluaran pribadi seperti : telp room, mini bar dan laundry</li>
                         <li>Tips guide & sopir</li>
-                    </ol>
+                    </ul>
                     <div class="tombol-2 mb-4">
                         <button class="btn bt-list" data-toggle="modal" data-target="#exampleModal" type="button"
                             id="myBtn"><i class="fa fa-money" aria-hidden="true"></i>
@@ -184,12 +368,16 @@
                             Pesan Sekarang</a>
 
                     </div>
-                    <h2><strong>Destinasi</strong></h2>
-                    <p>
-                        @foreach ($destinasiList as $destinasi)
-                            <strong> {{ $destinasi->nama_destinasi }}</strong> ,
-                        @endforeach
-                    </p>
+                    <h2><strong>TESTIMONI </strong></h2>
+
+                    <div class="slick-carousel  ftco-animate">
+                        <div style="background-image: url('../umum/images/galeri-3.jpg');"></div>
+                        <div style="background-image: url('../umum/images/galeri-1.jpg');"></div>
+                        <div style="background-image: url('../umum/images/galeri-2.jpg');"></div>
+                        <div style="background-image: url('../umum/images/galeri-4.jpg');"></div>
+                        <div style="background-image: url('../umum/images/galeri-5.jpg');"></div>
+                        <div style="background-image: url('../umum/images/galeri-6.jpg');"></div>
+                    </div>
                 </div>
 
                 <!-- .col-md-8 -->
@@ -365,4 +553,13 @@
             Pesan Sekarang</a>
 
     </div>
+@endsection
+@section('script')
+    <script src="{{ asset('umum/lightbox/js/lightbox.js') }}"></script>
+
+    <script>
+        gtag('event', 'conversion', {
+            'send_to': 'AW-11097109091/iJz4CJ3EwI0YEOPkwasp'
+        });
+    </script>
 @endsection

@@ -42,28 +42,49 @@
         </div>
     </div>
 
-    <section class="ftco-section" style="background-color: rgb(255, 255, 255);" id="paket-tour">
+    <section class="ftco-section bg-light" id="paket-tour">
         <div class="container">
             <div class="row justify-content-center pb-4">
                 <div class="col-md-12 heading-section text-center ftco-animate">
-                    <h2 class="subheading mb-3">Paket Tour</h2>
+                    <h2 class="subheading mb-3">Special Offers</h2>
                 </div>
             </div>
-            <div class="row" style="margin-bottom: 50px;">
+            <div class="multiple-items" style="margin-bottom: 50px;">
                 @forelse ($tour as $card)
-                    <div class="col-md-4 ftco-animate">
-                        <div class="project-wrap">
-                            <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}" class="img"
-                                style="background-image: url(images/gallery/{{ $card->id_gambar }});">
-                                <span class="price">IDR {{ $card->harga_utama }}K/Person</span>
-                            </a>
-                            <div class="text p-4">
-                                <span class="days">{{ $card->durasi }}</span>
-                                <h3><a
+                    <div class="tours ftco-animate shadow-sm mr-3 mb-5">
+                        <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">
+                            @if ($card->persentase == null)
+                            @else
+                                <div class="diskon-logo d-flex align-items-center justify-content-center"
+                                    style="background-image: url('gambar/bookmark.png')">
+                                    <div class="text-center">
+                                        <span>{{ $card->persentase }}%</span> <span class="text-white">OFF</span>
+                                    </div>
+
+                                </div>
+                            @endif
+                            <div class="img-tour" style="background-image: url(images/gallery/{{ $card->id_gambar }});">
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <div class="isi-tour">
+                                <div class="nama-tours"><a
                                         href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">{{ $card->nama_tour }}</a>
-                                </h3>
-                                <p class="location"><span class="fa fa-map-marker"></span> {{ $card->lokasi }}</p>
-                                <ul>
+                                </div>
+                                <div class="nama-tours text-dark mb-2"><span class="fa fa-map-marker"></span>
+                                    {{ $card->lokasi }}
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="harga-tours">Rp
+                                    @if ($card->harga_diskon == null)
+                                        {{ $card->harga_utama }}K
+                                    @else
+                                        {{ $card->harga_diskon }}K
+                                    @endif
+                                </p>
+                                <ul class="rating">
                                     @if ($card->rating == '5')
                                         <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
                                                 class="fa fa-star"></span><span class="fa fa-star"></span><span
@@ -80,7 +101,10 @@
                                         <li><span class="fa fa-star"></span></li>
                                     @endif
                                 </ul>
-
+                            </div>
+                            <div class="w-100 mb-1">
+                                <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}"
+                                    class="w-100 btn btn-primary btn-pesan-tour"> pesan sekarang</a>
                             </div>
                         </div>
                     </div>
@@ -88,10 +112,6 @@
                     <div class="alert alert-primary text-center">tidak ada paket tour</div>
                 @endforelse
 
-                <div class="ftco-animate text-right pb-4" style="width: 100%;">
-                    <a href="{{ route('pengunjung.paket-tour') }}" class=" btn btn-link ">Lihat Selengkapnya <i
-                            class="fa fa-arrow-right" aria-hidden="true"></i></a>
-                </div>
             </div>
         </div>
     </section>
@@ -159,10 +179,10 @@
 
     <section class="ftco-section ">
         <div class="container">
-            <div class="col-md-12 heading-section text-center ftco-animate">
-                <h2 class="subheading mb-3">Gallery</h2>
+            <div class="col-md-12 heading-section text-center">
+                <h2 class="subheading mb-3  ftco-animate">Gallery</h2>
             </div>
-            <div class="slick-carousel">
+            <div class="slick-carousel  ftco-animate">
                 <div style="background-image: url('umum/images/galeri-3.jpg');"></div>
                 <div style="background-image: url('umum/images/galeri-1.jpg');"></div>
                 <div style="background-image: url('umum/images/galeri-2.jpg');"></div>
@@ -177,80 +197,17 @@
 
     <section class="ftco-section" style="background-color: rgb(245, 245, 245);">
         <div class="container">
-            <div class="col-md-12 heading-section text-center ftco-animate">
-                <h2 class="subheading mb-3">Video</h2>
+            <div class="col-md-12 heading-section text-center">
+                <h2 class="subheading mb-3  ftco-animate">Video</h2>
             </div>
-            <div class="row d-flex mt-4">
+            <div class="row d-flex mt-4  ftco-animate">
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aNiF0C0xa7k"
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
-
             </div>
-
-        </div>
         </div>
     </section>
-@endsection
-@section('script')
-    <script>
-        $(document).ready(function() {
-            $('.slick-carousel').slick({
-                autoplay: true,
-                autoplaySpeed: 5000,
-                dots: true,
-                arrows: false,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                adaptiveHeight: true,
-                responsive: [{
-                        breakpoint: 480,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            dots: true,
-                            arrows: false,
-                            infinite: true,
-                            speed: 300,
-                            adaptiveHeight: true
-                        }
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 2,
-                            dots: true,
-                            arrows: false,
-                            infinite: true,
-                            speed: 300,
-                            adaptiveHeight: true
-                        }
-                    },
-                    {
-                        breakpoint: 992,
-                        settings: {
-                            slidesToShow: 3,
-                            slidesToScroll: 3,
-                            dots: true,
-                            arrows: false,
-                            infinite: true,
-                            speed: 300,
-                            adaptiveHeight: true
-                        }
-                    }
-                ]
-            });
-
-        });
-
-        $(document).ready(function() {
-            setTimeout(function() {
-                $('#myModal').modal('show');
-            }, 5000);
-        });
-    </script>
 @endsection

@@ -16,7 +16,7 @@
                         @enderror
                     </div>
                     <div class="row">
-                        <div class="mb-3 col-lg-6">
+                        <div class="mb-3 col-lg-4">
                             <label for="durasi" class="form-label">Durasi :</label>
                             <input type="text" name="durasi" id="durasi"
                                 class="form-control @error('durasi') is-invalid @enderror" value="{{ $tour->durasi }}">
@@ -24,7 +24,7 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="mb-3 col-lg-6">
+                        <div class="mb-3 col-lg-3">
                             <label for="harga" class="form-label">Harga Utama :</label>
                             <input type="text" name="harga_utama" id="harga"
                                 class="form-control @error('harga_utama') is-invalid @enderror"
@@ -33,6 +33,32 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+                        <div class="mb-3 col-lg-2">
+                            <label for="persentase" class="form-label">Diskon (%) :</label>
+                            <input type="number" class="form-control" name="persentase" id="persentase">
+                        </div>
+                        <div class="mb-3 col-lg-3">
+                            <label for="harga_diskon" class="form-label">Harga Diskon :</label>
+                            <input type="text" class="form-control" name="harga_diskon" id="harga_diskon">
+                        </div>
+
+                        <script>
+                            const hargaInput = document.getElementById('harga');
+                            const diskonInput = document.getElementById('persentase');
+                            const hargaDiskonInput = document.getElementById('harga_diskon');
+
+                            const calculateDiscountedPrice = function() {
+                                const harga = parseFloat(hargaInput.value);
+                                const diskon = parseFloat(diskonInput.value);
+
+                                const hargaDiskon = harga - (harga * diskon / 100);
+                                hargaDiskonInput.value = `${hargaDiskon.toLocaleString("en-US",  {maximumFractionDigits: 2})}`;
+                            };
+
+                            hargaInput.addEventListener('input', calculateDiscountedPrice);
+                            diskonInput.addEventListener('input', calculateDiscountedPrice);
+                        </script>
+
                         <div class="mb-3 col-lg-6">
                             <label for="lokasi" class="form-label">Lokasi :</label>
                             <select class="form-control @error('lokasi') is-invalid @enderror" name="lokasi"
@@ -128,6 +154,7 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+
                     <div class="mb-3">
                         <label for="nama-tour" class="form-label">Head Keyword :</label>
                         <textarea name="head_keyword" id="head_keyword" class="form-control @error('head_keyword') is-invalid @enderror"
@@ -161,6 +188,9 @@
                             </div>
                         </div>
 
+                    </div>
+                    <div class="mb-3">
+                        <label for=""></label>
                     </div>
 
                     <div class="d-flex justify-content-end">

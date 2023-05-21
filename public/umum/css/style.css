@@ -11966,7 +11966,7 @@ a.text-dark:focus {
     }
 
     abbr[title]::after {
-        content: " ("attr(title) ")";
+        content: " (" attr(title) ")";
     }
 
     pre {
@@ -12114,7 +12114,7 @@ h5,
 
 @media (max-width: 991.98px) {
     .ftco-navbar-light {
-        background: #000000 !important;
+        background: #343A40 !important;
         position: relative;
         top: 0;
         padding-top: 0;
@@ -14563,7 +14563,7 @@ textarea.form-control {
 .whatsapp {
     position: fixed;
     right: 0;
-    bottom: 80px;
+    bottom: 150px;
     z-index: 9999;
     padding: 10px;
     background-color: white;
@@ -14591,23 +14591,10 @@ textarea.form-control {
 
 }
 
-.whatsapp:hover p {
-    display: block;
-    font-size: 14px;
-    font-weight: 600;
-    margin-right: 5px;
-    margin-top: 15px;
-    color: green;
-    justify-content: end;
-    margin-left: 10px;
 
-}
 
 .whatsapp:hover {
-    padding: 10px 10px 10px 20px;
-    width: 160px;
-    border-radius: 50px 0 0 50px;
-    justify-content: start;
+    opacity: 50%;
 
 
 }
@@ -14659,18 +14646,200 @@ textarea.form-control {
     top: 0;
 }
 
-@media (max-width: 576px) {
+/* @media screen and (max-width: 380px) {
+
+    .tours .card-body .nama-tours a {
+        font-size: 8px !important;
+
+    }
+
+    .tours .card-body .nama-tours {
+        font-size: 6px !important;
+
+    }
+
+    .tours .card-body .harga-tours {
+        font-size: 7px !important;
+
+    }
+
+    .tours .card-body .rating {
+        font-size: 6px !important;
+    }
+
+    .tours .btn-pesan-tour {
+        font-size: 8px !important;
+    }
+} */
+
+
+@media screen and (max-width: 576px) {
     .isi-slider {
         width: 100%;
         left: 0;
     }
 
+    .tours {
+        height: 18rem;
+        margin-bottom: 20px;
+        display: block;
+    }
 
+    .tours.show {
+        height: auto !important;
+
+    }
+
+
+    .tours .img-tour {
+        height: 8rem !important;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .tours .img-tour.show {
+        height: 7rem !important;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .tours ul {
+        list-style: none;
+        color: var(--yellow);
+
+    }
+
+    .tours .card-body {
+        padding: 10px !important;
+    }
+
+    .tours .card-body .nama-tours a {
+        font-size: 10px !important;
+
+    }
+
+    .tours .isi-tour {
+        height: 55px !important;
+    }
+
+    .tours .card-body .nama-tours {
+        font-size: 8px !important;
+
+    }
+
+    .tours .card-body .harga-tours {
+        font-size: 9px !important;
+
+    }
+
+    .tours .card-body .rating {
+        font-size: 8px !important;
+    }
+
+    .tours .card-body .rating.show {
+        font-size: 7px !important;
+    }
+
+    .tours .btn-pesan-tour {
+        font-size: 10px !important;
+    }
+
+    .tours .diskon-logo {
+
+        font-size: 10px !important;
+        line-height: 12px !important;
+        width: 40px !important;
+        height: 55px !important;
+
+
+
+    }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 912px) {
     .container {
         max-width: 720px;
+    }
+
+    .tours {
+        height: 20rem;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    .tours {
+        height: 20rem;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+
+    .tours .img-tour {
+        height: 10rem !important;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+
+
+    .tours .card-body {
+        padding: 12px !important;
+    }
+
+    .tours .card-body .nama-tours a {
+        font-size: 12px !important;
+
+    }
+
+    .tours .isi-tour {
+        height: 70px !important;
+    }
+
+    .tours .isi-tour-show {
+        height: 80px !important;
+    }
+
+    .tours .card-body .nama-tours {
+        font-size: 10px !important;
+
+    }
+
+    .tours .card-body .harga-tours {
+        font-size: 10px !important;
+
+    }
+
+    .tours .card-body .rating {
+        font-size: 10px !important;
+    }
+
+    .tours .btn-pesan-tour {
+        font-size: 12px !important;
+    }
+
+    .tours .diskon-logo {
+
+        font-size: 10px !important;
+        line-height: 12px !important;
+        width: 40px !important;
+        height: 55px !important;
+    }
+
+    .tours .diskon-logo-show {
+
+        font-size: 10px !important;
+        line-height: 12px !important;
+        width: 40px !important;
+        height: 55px !important;
+
+
+
     }
 }
 
@@ -14722,6 +14891,7 @@ textarea.form-control {
     .slick-carousel div {
         height: 200px;
     }
+
 }
 
 /* Media query untuk perangkat tablet */
@@ -14736,4 +14906,89 @@ textarea.form-control {
     .slick-carousel div {
         height: 500px;
     }
+}
+
+.tours {
+    background-color: #fff;
+    height: 25rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.tours.show {
+    background-color: #fff;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.tours .img-tour {
+    height: 13rem;
+    width: 100%;
+    background-size: cover;
+}
+
+.tours ul {
+    list-style: none;
+    color: var(--yellow);
+
+}
+
+.tours .card-body .nama-tours a {
+    font-size: 14px;
+    color: #000;
+
+}
+
+.tours .isi-tour {
+    height: 80px;
+}
+
+.tours .isi-tour-show {
+    height: 80px;
+}
+
+
+
+.tours .card-body .nama-tours {
+    font-size: 12px;
+
+}
+
+.tours .card-body .harga-tours {
+    font-size: 16px;
+    color: #ee4d2d;
+
+}
+
+.tours .diskon-logo {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 90%;
+    font-size: 14px;
+    line-height: 16px;
+    right: 0;
+    width: 50px;
+    height: 65px;
+    top: -10px;
+    color: #ee4d2d;
+
+
+}
+
+.tours .diskon-logo-show {
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 90%;
+    font-size: 14px;
+    line-height: 16px;
+    right: 0;
+    width: 50px;
+    height: 65px;
+    top: 0px;
+    color: #ee4d2d;
+
+
 }

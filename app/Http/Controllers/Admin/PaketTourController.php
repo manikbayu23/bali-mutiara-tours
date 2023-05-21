@@ -168,6 +168,8 @@ class PaketTourController extends Controller
             'lokasi' => 'required',
             'rating' => 'required',
             'head_keyword' => 'required',
+            'harga_diskon' => 'required',
+            'persentase' => 'required',
             'tabel_harga' => 'required',
             'id_destinasi' => 'required',
             'id_kategori' => 'required',
@@ -194,6 +196,8 @@ class PaketTourController extends Controller
         $tour->slug = Str::slug($request->nama_tour, '-');
         $tour->durasi = $request->durasi;
         $tour->harga_utama = $request->harga_utama;
+        $tour->harga_diskon = $request->harga_diskon;
+        $tour->persentase = $request->persentase;
         $tour->lokasi = $request->lokasi;
         $tour->head_keyword = $request->head_keyword;
         $tour->tabel_harga = $request->tabel_harga;

@@ -57,10 +57,10 @@ class HomeController extends Controller
         }
         $total_destinasi = count($destinasiList);
 
-        $datatours= PaketTour::where('is_archived', '0')
-        ->whereIn('durasi', ['3 Hari 2 Malam', '4 Hari 3 Malam', '1 Hari'])
-        ->take(5)
-        ->get();
+        $datatours = PaketTour::where('is_archived', '0')
+            ->whereIn('durasi', ['3 Hari 2 Malam', '4 Hari 3 Malam', '1 Hari'])
+            ->take(5)
+            ->get();
 
         return view('paket-tour-show', [
             "title" => $title,
@@ -113,7 +113,7 @@ class HomeController extends Controller
                     $query->where('kategori.kategori_tour', $request->kategori);
                 }
             })->where('is_archived', '0')->orderBy('paket_tour.durasi', 'asc')
-            ->paginate(12);
+            ->paginate(24);
 
         return view('paket-tour', [
             "title" => "Paket Tours - Bali - Nusa Penida & Lombok",
