@@ -328,7 +328,7 @@
     <section class="ftco-section ftco-no-pt ftco-no-pb bg-light tour-desk mt-3 mb-3">
         <div class="container p-lg-5 p-4 bg-white shadow">
             <div class="row">
-                <div class="col-lg-8 ftco-animate py-md-5  pt-2 mt-lg-1">
+                <div class="col-lg-8 py-md-5  pt-2 mt-lg-1">
                     <div class="text-justify">
                         {!! $tour->deskripsi !!}
                     </div>
@@ -381,8 +381,8 @@
                 </div>
 
                 <!-- .col-md-8 -->
-                <div class="col-lg-4 sidebar ftco-animate bg-light py-md-5">
-                    <div class="sidebar-box ftco-animate">
+                <div class="col-lg-4 sidebar bg-light py-md-5">
+                    <div class="sidebar-box ">
                         <div class="form-pemesanan">
                             <form id="pemesanan">
                                 <h2 class="h5"><strong>Pesan Tour</strong></h2>
