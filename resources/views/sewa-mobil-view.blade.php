@@ -1,41 +1,35 @@
 @extends('layouts.main')
 @section('content-main')
     <div class="slider-background">
-        <div class="slider ">
-            <div class="slide active hero-wrap-2 js-fullheight" style="background-image: url('umum/images/tari-kecak3.jpg')">
+        <div class="slide-fade">
+            <div class="fade-items" style="background-image: url('umum/images/pura-danu.jpg')">
             </div>
-            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/bg-17.jpg')"></div>
-            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/tirta-empul.jpg')"></div>
-            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/rafting-3.jpg')"></div>
-            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/pura-danu.jpg')">
+            <div class="fade-items" style="background-image: url('umum/images/rafting-3.jpg')"></div>
+            <div class="fade-items" style="background-image: url('umum/images/tirta-empul.jpg')"></div>
+            <div class="fade-items" style="background-image: url('umum/images/tari-kecak3.jpg')"></div>
+            <div class="fade-items" style="background-image: url('umum/images/bg-17.jpg')"></div>
+        </div>
+        <div class="nav-slider">
+            <div class="container-fluid">
+                <div class="ftco-animate text-center">
+                    <h1 class="mb-0 isi-intro">Sewa Mobil</h1>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i
+                                    class="fa fa-chevron-right"></i></a></span> <span>Sewa Mobil <i
+                                class="fa fa-chevron-right"></i></span>
+                    </p>
+                </div>
             </div>
         </div>
-        <div class="shadow-op"></div>
-        <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
-            <div class="col-md-9 ftco-animate pb-5 text-center">
-                <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i
-                                class="fa fa-chevron-right"></i></a></span> <span>Sewa Mobil <i
-                            class="fa fa-chevron-right"></i></span></p>
-                <h1 class="mb-0 bread">Sewa Mobil Dengan Sopir</h1>
-            </div>
-        </div>
-    </div>
     </div>
 
-    <section class="ftco-section">
+    <section class="ftco-section bg-light">
         <div class="container">
             <p class="mb-0 bread" style="text-align:justify; padding-bottom: 100px;">Sewa mobil murah di Bali dengan supir
                 dapat
                 menjadi pilihan yang
                 tepat untuk Anda jika Anda ingin mengunjungi berbagai tempat di Bali dengan fleksibilitas dan kenyamanan
                 yang
-                lebih tinggi. Dengan menyewa mobil dengan supir, Anda dapat mengeluarkan biaya transportasi yang lebih
-                rendah
-                dibandingkan jika Anda menyewa mobil tanpa supir atau menggunakan taksi. Selain itu, Anda juga dapat
-                menikmati
-                perjalanan yang lebih nyaman karena supir yang Anda sewa akan mengetahui jalur terbaik dan tempat-tempat
-                menarik
-                yang dapat dikunjungi di Bali.</p>
+                lebih tinggi.</p>
             <div class="row">
 
                 @forelse ($data as $car)

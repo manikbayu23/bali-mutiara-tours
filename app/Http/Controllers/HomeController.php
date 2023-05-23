@@ -112,7 +112,8 @@ class HomeController extends Controller
                 if ($request->kategori) {
                     $query->where('kategori.kategori_tour', $request->kategori);
                 }
-            })->where('is_archived', '0')->orderBy('paket_tour.durasi', 'asc')
+            })->where('is_archived', '0')
+            ->orderByRaw("FIELD(paket_tour.lokasi, 'Bali', 'Nusa Penida', 'Lombok')")
             ->paginate(24);
 
         return view('paket-tour', [

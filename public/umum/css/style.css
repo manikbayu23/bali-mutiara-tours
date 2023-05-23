@@ -12413,12 +12413,7 @@ h5,
     position: relative;
 }
 
-.slider-text .subheading {
-    font-size: 30px;
-    color: var(--cyan);
-    ;
-    font-family: "Arizonia", cursive;
-}
+.slider-text .subheading {}
 
 .slider-text h1 {
     font-size: 55px;
@@ -14637,14 +14632,7 @@ textarea.form-control {
 
 }
 
-.shadow-op {
-    background-color: #000;
-    opacity: 50%;
-    height: 200%;
-    position: absolute;
-    width: 100%;
-    top: 0;
-}
+
 
 /* @media screen and (max-width: 380px) {
 
@@ -14674,6 +14662,39 @@ textarea.form-control {
 
 
 @media screen and (max-width: 576px) {
+
+
+    .slider-background {
+        height: 60vh !important;
+    }
+
+    .slider-background .intro-slider {
+        text-align: center;
+    }
+
+
+
+    .slider-background .intro-slider {
+        top: 20% !important;
+        left: 0 !important;
+    }
+
+    .slider-background .subheading {
+        font-size: 24px !important;
+
+    }
+
+    .slider-background .isi-intro {
+        font-weight: 600;
+        color: #fff;
+        font-size: 26px !important;
+    }
+
+    .slide-fade .fade-items {
+        height: 80vh !important;
+        background-position: center;
+    }
+
     .isi-slider {
         width: 100%;
         left: 0;
@@ -14755,12 +14776,37 @@ textarea.form-control {
         width: 40px !important;
         height: 55px !important;
 
+    }
 
+    .bt-lihatPaket {
+        margin-top: 10px !important;
+        font-size: 13px !important;
 
     }
+
+
 }
 
 @media screen and (max-width: 912px) {
+
+
+
+    .slider-background {
+        height: 60vh !important;
+    }
+
+    .slider-background .intro-slider {
+        top: 22% !important;
+        left: 0 !important;
+
+    }
+
+
+    .slide-fade .fade-items {
+        height: 75vh !important;
+        background-position: center;
+    }
+
     .container {
         max-width: 720px;
     }
@@ -14843,38 +14889,7 @@ textarea.form-control {
     }
 }
 
-.slider-background {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
 
-.slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-    background-position: center center;
-    background-size: cover;
-}
-
-.slide.active {
-    opacity: 1;
-    z-index: 1;
-}
 
 .slick-carousel div {
     width: 100%;
@@ -14991,4 +15006,47 @@ textarea.form-control {
     color: #ee4d2d;
 
 
+}
+
+.slider-background {
+    height: 70vh;
+    background-color: #000;
+}
+
+.slider-background .slide-fade {
+    height: 70vh;
+    opacity: 50%;
+}
+
+.slide-fade .fade-items {
+    height: 70vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center -100px;
+}
+
+.slider-background .intro-slider {
+    top: 20vh;
+    position: absolute;
+    top: 17%;
+    left: 10%;
+}
+
+.slider-background .nav-slider {
+    top: 45vh;
+    position: absolute;
+    width: 100%;
+
+    text-align: center;
+}
+
+.slider-background .subheading {
+    font-size: 30px;
+    color: var(--cyan);
+    font-family: "Arizonia", cursive;
+}
+
+.slider-background .isi-intro {
+    font-weight: 600;
+    color: #fff;
 }

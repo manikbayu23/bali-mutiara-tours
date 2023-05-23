@@ -2,25 +2,6 @@
 
     "use strict";
 
-    $(window).stellar({
-        responsive: true,
-        parallaxBackgrounds: true,
-        parallaxElements: true,
-        horizontalScrolling: false,
-        hideDistantElements: false,
-        scrollProperty: 'scroll'
-    });
-
-
-    var fullHeight = function () {
-
-        $('.js-fullheight').css('height', $(window).height());
-        $(window).resize(function () {
-            $('.js-fullheight').css('height', $(window).height());
-        });
-
-    };
-    fullHeight();
 
     // loader
     var loader = function () {
@@ -280,7 +261,8 @@
             dots: true,
             infinite: true,
             autoplay: true,
-            autoplaySpeed: 3000,
+            arrows: false,
+            autoplaySpeed: 4000,
             speed: 300,
             slidesToShow: 4,
             slidesToScroll: 1,
@@ -317,6 +299,19 @@
         setTimeout(function() {
             $('#myModal').modal('show');
         }, 4000);
+    });
+
+    $(document).ready(function() {
+        $('.slide-fade').slick({
+            dots: false,
+            autoplay: true,
+            arrows: false,
+            autoplaySpeed: 3000,
+            infinite: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
     });
 })(jQuery);
 

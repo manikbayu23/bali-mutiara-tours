@@ -2,20 +2,20 @@
 
 @section('content-main')
     <div class="slider-background">
-        <div class="slider ">
-            <div class="slide active hero-wrap-2 js-fullheight" style="background-image: url('umum/images/pura-danu.jpg')">
+        <div class="slide-fade">
+            <div class="fade-items" style="background-image: url('umum/images/pura-danu.jpg')">
             </div>
-            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/rafting-3.jpg')"></div>
-            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/tirta-empul.jpg')"></div>
-            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/tari-kecak3.jpg')"></div>
-            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/bg-17.jpg')"></div>
+            <div class="fade-items" style="background-image: url('umum/images/rafting-3.jpg')"></div>
+            <div class="fade-items" style="background-image: url('umum/images/tirta-empul.jpg')"></div>
+            <div class="fade-items" style="background-image: url('umum/images/tari-kecak3.jpg')"></div>
+            <div class="fade-items" style="background-image: url('umum/images/bg-17.jpg')"></div>
         </div>
         <div class="shadow-op"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
-                <div class="col-md-7 ftco-animate">
+        <div class="intro-slider">
+            <div class="container-fluid">
+                <div class="col-md-10 col-lg-7 ftco-animate">
                     <span class="subheading">Welcome to Bali Mutiara Tours</span>
-                    <h1 class="mb-6">Temukan Tempat Liburan Favorit Anda Bersama Kami</h1>
+                    <h1 class="isi-intro">Temukan Tempat Liburan Favorit Anda Bersama Kami</h1>
                     <a href="{{ route('pengunjung.paket-tour') }}" class="btn bt-lihatPaket">Pesan Sekarang</a>
                 </div>
             </div>
@@ -116,7 +116,42 @@
         </div>
     </section>
 
-    <section class="ftco-section services-section" style="background-color: rgb(245, 245, 245);">
+
+
+    <section class="ftco-section bg-white">
+        <div class="container">
+            <div class="col-md-12 heading-section text-center">
+                <h2 class="subheading mb-3  ftco-animate">Gallery</h2>
+            </div>
+            <div class="slick-carousel  ftco-animate">
+                <div style="background-image: url('umum/images/galeri-3.jpg');"></div>
+                <div style="background-image: url('umum/images/galeri-1.jpg');"></div>
+                <div style="background-image: url('umum/images/galeri-2.jpg');"></div>
+                <div style="background-image: url('umum/images/galeri-4.jpg');"></div>
+                <div style="background-image: url('umum/images/galeri-5.jpg');"></div>
+                <div style="background-image: url('umum/images/galeri-6.jpg');"></div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="ftco-section" style="background-color: rgb(245, 245, 245);">
+        <div class="container">
+            <div class="col-md-12 heading-section text-center">
+                <h2 class="subheading mb-3  ftco-animate">Video</h2>
+            </div>
+            <div class="row d-flex mt-4  ftco-animate">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aNiF0C0xa7k"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ftco-section services-section bg-white">
         <div class="container">
             <div class="col-md-12 heading-section text-center ftco-animate">
                 <h2 class="subheading mb-3">Service</h2>
@@ -172,40 +207,6 @@
                             </p>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="ftco-section ">
-        <div class="container">
-            <div class="col-md-12 heading-section text-center">
-                <h2 class="subheading mb-3  ftco-animate">Gallery</h2>
-            </div>
-            <div class="slick-carousel  ftco-animate">
-                <div style="background-image: url('umum/images/galeri-3.jpg');"></div>
-                <div style="background-image: url('umum/images/galeri-1.jpg');"></div>
-                <div style="background-image: url('umum/images/galeri-2.jpg');"></div>
-                <div style="background-image: url('umum/images/galeri-4.jpg');"></div>
-                <div style="background-image: url('umum/images/galeri-5.jpg');"></div>
-                <div style="background-image: url('umum/images/galeri-6.jpg');"></div>
-            </div>
-
-
-        </div>
-    </section>
-
-    <section class="ftco-section" style="background-color: rgb(245, 245, 245);">
-        <div class="container">
-            <div class="col-md-12 heading-section text-center">
-                <h2 class="subheading mb-3  ftco-animate">Video</h2>
-            </div>
-            <div class="row d-flex mt-4  ftco-animate">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aNiF0C0xa7k"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen></iframe>
                 </div>
             </div>
         </div>

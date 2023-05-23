@@ -3,30 +3,28 @@
 
 @section('content-main')
     <div class="slider-background">
-        <div class="slider ">
-            <div class="slide active hero-wrap-2 js-fullheight" style="background-image: url('umum/images/tirta-empul.jpg')">
+        <div class="slide-fade">
+            <div class="fade-items" style="background-image: url('umum/images/pura-danu.jpg')">
             </div>
-            <div class="slide  hero-wrap-2 js-fullheight" style="background-image: url('umum/images/bg-17.jpg')"></div>
-            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/tari-kecak3.jpg')"></div>
-            <div class="slide hero-wrap-2 js-fullheight" style="background-image: url('umum/images/rafting-3.jpg')"></div>
-            <div class="slide  hero-wrap-2 js-fullheight" style="background-image: url('umum/images/pura-danu.jpg')">
-            </div>
+            <div class="fade-items" style="background-image: url('umum/images/rafting-3.jpg')"></div>
+            <div class="fade-items" style="background-image: url('umum/images/tirta-empul.jpg')"></div>
+            <div class="fade-items" style="background-image: url('umum/images/tari-kecak3.jpg')"></div>
+            <div class="fade-items" style="background-image: url('umum/images/bg-17.jpg')"></div>
         </div>
-        <div class="shadow-op"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
-                <div class="col-md-9 ftco-animate pb-5 text-center">
+        <div class="nav-slider">
+            <div class="container-fluid">
+                <div class="ftco-animate text-center">
+                    <h1 class="mb-0 isi-intro">Kontak Kami</h1>
                     <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i
-                                    class="fa fa-chevron-right"></i></a></span> <span>Contact <i
+                                    class="fa fa-chevron-right"></i></a></span> <span>Kontak <i
                                 class="fa fa-chevron-right"></i></span>
                     </p>
-                    <h1 class="mb-0 bread">Hubungi Kami</h1>
                 </div>
             </div>
         </div>
     </div>
 
-    <section class="ftco-section ftco-no-pb contact-section mb-4">
+    <section class="ftco-section ftco-no-pb contact-section mb-4 bg-light">
         <div class="container">
             <div class="row d-flex contact-info">
                 <div class="col-md-3 d-flex">
