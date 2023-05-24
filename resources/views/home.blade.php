@@ -50,8 +50,8 @@
                 </div>
             </div>
             <div class="multiple-items" style="margin-bottom: 50px;">
-                @forelse ($tour as $card)
-                    <div class="tours ftco-animate shadow-sm mr-3 mb-5">
+                @forelse ($tourbali as $card)
+                    <div class="tours show ftco-animate shadow-sm mr-3 mb-5">
                         <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">
                             @if ($card->persentase == null)
                             @else
@@ -67,7 +67,135 @@
                             </div>
                         </a>
                         <div class="card-body">
-                            <div class="isi-tour">
+                            <div class="isi-tour-show">
+                                <div class="nama-tours"><a
+                                        href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">{{ $card->nama_tour }}</a>
+                                </div>
+                                <div class="nama-tours text-dark mb-2"><span class="fa fa-map-marker"></span>
+                                    {{ $card->lokasi }}
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="harga-tours">Rp
+                                    @if ($card->harga_diskon == null)
+                                        {{ $card->harga_utama }}K
+                                    @else
+                                        {{ $card->harga_diskon }}K
+                                    @endif
+                                </p>
+                                <ul class="rating">
+                                    @if ($card->rating == '5')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span></li>
+                                    @elseif($card->rating == '4')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span><span class="fa fa-star"></span></li>
+                                    @elseif($card->rating == '3')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span></li>
+                                    @elseif($card->rating == '2')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span></li>
+                                    @else
+                                        <li><span class="fa fa-star"></span></li>
+                                    @endif
+                                </ul>
+                            </div>
+                            <div class="w-100 mb-1">
+                                <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}"
+                                    class="w-100 btn btn-primary btn-pesan-tour"> pesan sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="alert alert-primary text-center">tidak ada paket tour</div>
+                @endforelse
+
+            </div>
+            <div class="multiple-items" style="margin-bottom: 50px;">
+                @forelse ($tournusa as $card)
+                    <div class="tours show ftco-animate shadow-sm mr-3 mb-5">
+                        <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">
+                            @if ($card->persentase == null)
+                            @else
+                                <div class="diskon-logo d-flex align-items-center justify-content-center"
+                                    style="background-image: url('gambar/bookmark.png')">
+                                    <div class="text-center">
+                                        <span>{{ $card->persentase }}%</span> <span class="text-white">OFF</span>
+                                    </div>
+
+                                </div>
+                            @endif
+                            <div class="img-tour" style="background-image: url(images/gallery/{{ $card->id_gambar }});">
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <div class="isi-tour-show">
+                                <div class="nama-tours"><a
+                                        href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">{{ $card->nama_tour }}</a>
+                                </div>
+                                <div class="nama-tours text-dark mb-2"><span class="fa fa-map-marker"></span>
+                                    {{ $card->lokasi }}
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="harga-tours">Rp
+                                    @if ($card->harga_diskon == null)
+                                        {{ $card->harga_utama }}K
+                                    @else
+                                        {{ $card->harga_diskon }}K
+                                    @endif
+                                </p>
+                                <ul class="rating">
+                                    @if ($card->rating == '5')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span></li>
+                                    @elseif($card->rating == '4')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span><span class="fa fa-star"></span></li>
+                                    @elseif($card->rating == '3')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span><span
+                                                class="fa fa-star"></span></li>
+                                    @elseif($card->rating == '2')
+                                        <li><span class="fa fa-star"></span><span class="fa fa-star"></span></li>
+                                    @else
+                                        <li><span class="fa fa-star"></span></li>
+                                    @endif
+                                </ul>
+                            </div>
+                            <div class="w-100 mb-1">
+                                <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}"
+                                    class="w-100 btn btn-primary btn-pesan-tour"> pesan sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                @empty
+                    <div class="alert alert-primary text-center">tidak ada paket tour</div>
+                @endforelse
+
+            </div>
+            <div class="multiple-items" style="margin-bottom: 50px;">
+                @forelse ($tourlombok as $card)
+                    <div class="tours show ftco-animate shadow-sm mr-3 mb-5">
+                        <a href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">
+                            @if ($card->persentase == null)
+                            @else
+                                <div class="diskon-logo d-flex align-items-center justify-content-center"
+                                    style="background-image: url('gambar/bookmark.png')">
+                                    <div class="text-center">
+                                        <span>{{ $card->persentase }}%</span> <span class="text-white">OFF</span>
+                                    </div>
+
+                                </div>
+                            @endif
+                            <div class="img-tour" style="background-image: url(images/gallery/{{ $card->id_gambar }});">
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <div class="isi-tour-show">
                                 <div class="nama-tours"><a
                                         href="{{ route('pengunjung.paket-tour.show', $card->slug) }}">{{ $card->nama_tour }}</a>
                                 </div>
