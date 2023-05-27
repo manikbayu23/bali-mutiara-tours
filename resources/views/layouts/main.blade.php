@@ -33,6 +33,14 @@
 
     <meta name="robots" content="index, follow">
 
+    <script>
+        function konversi() {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-11097109091/iJz4CJ3EwI0YEOPkwasp'
+            });
+        }
+    </script>
+
     @yield('style')
 
 </head>
@@ -42,7 +50,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" style="display: flex; align-items:center" href="/"><img
-                    src="{{ asset('umum/images/logo-travel-1.png') }}" width="50px" class="img-fluid" alt="">
+                    src="{{ asset('umum/images/logo-travel-1.png') }}" width="50px" class="img-fluid" alt="logo">
                 <div class="ml-2"> Bali
                     Mutiara<span>Tours</span></div>
             </a>
@@ -104,7 +112,7 @@
                         <h2 class="ftco-heading-2">Hubungi Kami</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <p>Bali</p>
+                                <li><b>Bali</b></li>
                                 <li><span class="icon fa fa-map-marker"></span><span class="text">Jl. Jaya Giri XI
                                         No. 19, Denpasar, Bali</span></li>
                                 <li><a href="https://api.whatsapp.com/send?phone=6287861184488"><span
@@ -115,7 +123,7 @@
                                             dewa@balimutiaratours.id</span></a></li>
                             </ul>
                             <ul>
-                                <p>Lombok</p>
+                                <li><b>Lombok</b> </li>
                                 <li><span class="icon fa fa-map-marker"></span><span class="text">Jl. Palapa 1 No. 9
                                         Cakra Barat,
                                         Mataram – Nusa Tenggara Barat</span></li>
@@ -142,9 +150,9 @@
     </footer>
 
     <a href="https://api.whatsapp.com/send?phone=6287861184488&amp;text=Hai,%20customer%20service%20Bali Mutiara Tours..."
-        target="blank" title="Klik untuk chat via Whatsapp" class="whatsapp">
+        target="blank" onclick="konversi()" title="Klik untuk chat via Whatsapp" class="whatsapp">
         <div class="dot">.</div>
-        <img src="{{ asset('umum/images/wa.png') }}" alt="">
+        <img src="{{ asset('umum/images/wa.png') }}" alt="whatsapp">
 
     </a>
 

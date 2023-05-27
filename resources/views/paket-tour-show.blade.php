@@ -556,10 +556,4 @@
 @endsection
 @section('script')
     <script src="{{ asset('umum/lightbox/js/lightbox.js') }}"></script>
-
-    <script>
-        gtag('event', 'conversion', {
-            'send_to': 'AW-11097109091/iJz4CJ3EwI0YEOPkwasp'
-        });
-    </script>
 @endsection

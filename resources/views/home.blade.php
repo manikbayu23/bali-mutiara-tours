@@ -32,7 +32,7 @@
                 </div>
                 <div class="modal-body">
                     <a href="{{ route('pengunjung.paket-tour.show', 'paket-tour-bali-4-hari-3-malam') }}">
-                        <img src="{{ asset('gambar/banner-promosi.png') }}" width="100%" alt="">
+                        <img src="{{ asset('gambar/banner-promosi.png') }}" width="100%" alt="paket tour 4 hari 3 malam">
                     </a>
                 </div>
             </div>
@@ -145,7 +145,7 @@
             <div class="row d-flex mt-4  ftco-animate">
                 <div class="embed-responsive embed-responsive-16by9">
                     <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/aNiF0C0xa7k"
-                        title="YouTube video player" frameborder="0"
+                        title="Bali Mutiara Tours" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         allowfullscreen></iframe>
                 </div>
