@@ -161,8 +161,6 @@
                 <div class="col-md-12 col-lg-3 d-flex align-self-stretch ftco-animate">
                     <div class="services services-1 color-1 d-block img"
                         style="background-image: url(umum/images/renang1.jpg);">
-                        <div class="icon d-flex align-items-center justify-content-center"><span
-                                class="flaticon-paragliding"></span></div>
                         <div class="media-body">
                             <h3 class="heading mb-3">Activities</h3>
                             <p>Menemukan kepuasan dalam membantu, merencanakan dan memesan liburan impian Anda.
@@ -173,8 +171,6 @@
                 <div class="col-md-12 col-lg-3 d-flex align-self-stretch ftco-animate">
                     <div class="services services-1 color-2 d-block img"
                         style="background-image: url(umum/images/nuspen.jpg);">
-                        <div class="icon d-flex align-items-center justify-content-center"><span
-                                class="flaticon-route"></span></div>
                         <div class="media-body">
                             <h3 class="heading mb-3">Travel Arrangements</h3>
                             <p> Buat daftar aktivitas dan atraksi potensial untuk dikunjungi.
@@ -184,9 +180,7 @@
                 </div>
                 <div class="col-md-12 col-lg-3 d-flex align-self-stretch ftco-animate">
                     <div class="services services-1 color-3 d-block img"
-                        style="background-image: url(umum/images/tour.jpg);">
-                        <div class="icon d-flex align-items-center justify-content-center"><span
-                                class="flaticon-tour-guide"></span></div>
+                        style="background-image: url(umum/images/private-guide.jpg);">
                         <div class="media-body">
                             <h3 class="heading mb-3">Private Guide</h3>
                             <p>Jelajahi destinasi wisata impian Anda bersama pemandu wisata pribadi yang akan
@@ -197,9 +191,7 @@
                 </div>
                 <div class="col-md-12 col-lg-3 d-flex align-self-stretch ftco-animate">
                     <div class="services services-1 color-4 d-block img"
-                        style="background-image: url(umum/images/lokasi.jpg);">
-                        <div class="icon d-flex align-items-center justify-content-center"><span
-                                class="flaticon-map"></span></div>
+                        style="background-image: url(umum/images/ayunan.jpg);">
                         <div class="media-body">
                             <h3 class="heading mb-3">Paket Tour Custom</h3>
                             <p>Nikmati pengalaman perjalanan yang tak terlupakan, fleksibel, dan disesuaikan

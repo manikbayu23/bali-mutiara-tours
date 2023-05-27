@@ -15,28 +15,21 @@
 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('umum/images/logo-travel-1.png') }}">
 
-    <link rel="stylesheet" href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css" type="text/css" />
-
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
     <link href="https://fonts.googleapis.com/css2?family=Arizonia&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="{{ asset('umum/css/animate.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('umum/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('umum/css/owl.theme.default.min.css') }}">
     <link rel="stylesheet" href="{{ asset('umum/css/magnific-popup.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('umum/css/bootstrap-datepicker.css') }}">
-    <link rel="stylesheet" href="{{ asset('umum/css/jquery.timepicker.css') }}">
-
-
-    <link rel="stylesheet" href="{{ asset('umum/css/flaticon.css') }}">
     <link rel="stylesheet" href="{{ asset('umum/css/style.css') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" href="https:///cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
     <meta name="robots" content="index, follow">
 
@@ -164,34 +157,12 @@
         </svg>
     </div>
 
-
-    <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
-
     <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        const swalWithBootstrapButtons = Swal.mixin({
-            customClass: {
-                confirmButton: 'btn btn-danger',
-                cancelButton: 'btn btn-secondary mr-3'
-            },
-            buttonsStyling: false
-        })
-    </script>
     <script src="{{ asset('umum/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('umum/js/jquery-migrate-3.0.1.min.js') }}"></script>
     <script src="{{ asset('umum/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('umum/js/jquery.easing.1.3.js') }}"></script>
     <script src="{{ asset('umum/js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('umum/js/jquery.stellar.min.js') }}"></script>
-    <script src="{{ asset('umum/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('umum/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('umum/js/jquery.animateNumber.min.js') }}"></script>
-    <script src="{{ asset('umum/js/bootstrap-datepicker.js') }}"></script>
     <script src="{{ asset('umum/js/scrollax.min.js') }}"></script>
     <script src="{{ asset('umum/js/main.js') }}"></script>
-
-    {{-- <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11097109091"></script>
