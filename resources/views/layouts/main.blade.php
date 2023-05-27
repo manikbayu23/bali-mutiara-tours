@@ -65,7 +65,7 @@
                     <li
                         class="nav-item {{ request()->routeIs('pengunjung.paket-tour', 'pengunjung.paket-tour.show*') ? 'active' : '' }}">
                         <a class="nav-link " href="{{ route('pengunjung.paket-tour') }}">
-                            Tour
+                            Tours
                         </a>
                     </li>
                     <li class="nav-item {{ request()->routeIs('pengunjung.sewa-mobil') ? 'active' : '' }}"><a

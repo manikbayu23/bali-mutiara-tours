@@ -16,7 +16,7 @@
                 <div class="ftco-animate text-center">
                     <h1 class="mb-0 isi-intro">Paket Tour</h1>
                     <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i
-                                    class="fa fa-chevron-right"></i></a></span> <span>Tour <i
+                                    class="fa fa-chevron-right"></i></a></span> <span>Tours <i
                                 class="fa fa-chevron-right"></i></span>
                     </p>
                 </div>
