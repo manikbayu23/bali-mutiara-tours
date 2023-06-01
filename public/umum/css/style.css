@@ -14668,14 +14668,12 @@ textarea.form-control {
         height: 60vh !important;
     }
 
+
+
+
     .slider-background .intro-slider {
         text-align: center;
-    }
-
-
-
-    .slider-background .intro-slider {
-        top: 20% !important;
+        top: 10% !important;
         left: 0 !important;
     }
 
@@ -15009,26 +15007,27 @@ textarea.form-control {
 }
 
 .slider-background {
-    height: 70vh;
+    height: 80vh;
     background-color: #000;
+    position: relative;
 }
 
 .slider-background .slide-fade {
-    height: 70vh;
+    height: 80vh;
     opacity: 50%;
+    position: relative;
 }
 
 .slide-fade .fade-items {
-    height: 70vh;
+    height: 90vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center -100px;
 }
 
 .slider-background .intro-slider {
-    top: 20vh;
     position: absolute;
-    top: 17%;
+    top: 25%;
     left: 10%;
 }
 
