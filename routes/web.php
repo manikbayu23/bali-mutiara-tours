@@ -10,6 +10,7 @@ use App\Http\Controllers\SewaMobilViewController;
 use App\Http\Controllers\Admin\KategoriController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\DestinasiController;
+use App\Http\Controllers\Admin\InvoiceController;
 use App\Http\Controllers\Admin\PaketTourController;
 use App\Http\Controllers\Admin\SewaMobilController;
 use App\Http\Controllers\GalleryPengunjungController;
@@ -88,4 +89,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     //Artikel
     Route::get('/admin/artikel', [ArtikelController::class, 'index'])->name('artikel');
+
+    //Invoice
+    Route::get('/admin/invoice', [InvoiceController::class, 'index'])->name('invoice');
+    Route::post('/admin/invoice-print', [InvoiceController::class, 'print'])->name('invoice-print');
 });

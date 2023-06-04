@@ -97,6 +97,11 @@
                         href="{{ route('artikel') }}"><i class="fa-solid fa-newspaper"></i>
                         <div class="link-text">Artikel</div>
                     </a></li>
+                <li><a class="side-link {{ request()->routeIs('invoice') ? 'active' : '' }}"
+                        href="{{ route('invoice') }}">
+                        <i class="fa-solid fa-file-invoice"></i>
+                        <div class="link-text">Invoice</div>
+                    </a></li>
             </ul>
         </div>
     </nav>
