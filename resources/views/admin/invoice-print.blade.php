@@ -40,38 +40,40 @@
             <p>Tanggal: {{ $date }}</p>
         </div>
 
-        <table class=" table table-hover">
-            <thead>
-                <tr>
-                    <th>Description</th>
-                    <th>Harga</th>
-                    <th>Pax</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($items as $description => $totalAmount)
-                    <tr>
-                        <td>{{ $description }}</td>
-                        <td>Rp{{ number_format($amounts[$loop->index], 0, ',', '.') }}</td>
-                        <td>{{ $pax[$loop->index] }}</td>
-                        <td>Rp{{ number_format($totalAmount, 0, ',', '.') }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-        <div class="mb-5">
-            <h3 class="h5">Harga Total : Rp{{ number_format($grandTotal, 2) }}</h3>
+        <div class="w-100 mb-5">
+            @foreach ($items as $description => $totalAmount)
+                <div class="d-flex border-bottom">
+                    <div class="col">
+                        <h6>Deskripsi :</h6>
+                        <p>{{ $description }}</p>
+
+                    </div>
+                    <div class="col-4 d-flex justify-content-end">
+                        <div>
+                            <h6>Harga :</h6>
+                            <p>Rp{{ number_format($amounts[$loop->index], 0, ',', '.') }}</p>
+                            <p>Pax : {{ $pax[$loop->index] }}</p>
+                            <p>Total : Rp{{ number_format($totalAmount, 0, ',', '.') }}</p>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        <div class="mb-5 d-flex justify-content-end">
+            <div>
+                <p>Hotel : {{ $hotel }} </p>
+                <h4 class="h5">Total : Rp{{ number_format($grandTotal, 2) }}</h4>
+            </div>
         </div>
 
         <div>
             <p class="h6">BCA</p>
             <p class="h6">No. Rek : 772.5.10.0086</p>
-            <p class="mb-2h6 ">An. Nama : I Dewa Made SUkawati</p>
+            <p class="mb-2 h6 ">An. Nama : I Dewa Made Sukawati</p>
             <p class="h6">Tlp/WA : 0878-6118-4488</p>
         </div>
-        <div class="w-100 d-flex justify-content-end">
-            <button class="print-button btn btn-primary" onclick="window.print()">Print</button>
+        <div class="w-100 d-flex justify-content-end mt-5">
+            <button class="print-button btn btn-primary w-100" onclick="window.print()">Print</button>
         </div>
     </div>
 </body>

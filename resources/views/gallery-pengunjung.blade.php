@@ -1,6 +1,8 @@
 @extends('layouts.main')
 
 @section('style')
+    <link rel="stylesheet" href="{{ asset('umum/css/magnific-popup.css') }}">
+
     <link rel="stylesheet" href="{{ asset('umum/lightbox/css/lightbox.css') }}">
 @endsection
 @section('content-main')

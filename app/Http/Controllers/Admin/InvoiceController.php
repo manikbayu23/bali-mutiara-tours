@@ -17,9 +17,6 @@ class InvoiceController extends Controller
         ]);
     }
 
-
-
-
     public function print(Request $request)
     {
         $data = $request->validate([
@@ -29,11 +26,13 @@ class InvoiceController extends Controller
             'amount.*' => 'numeric',
             'pax' => 'required|array',
             'pax.*' => 'integer|min:1',
+            'hotel' => 'nullable',
         ]);
 
         $invoiceNumber = 'MBT' . Str::random(6); // Menghasilkan nomor acak dengan awalan "MBT"
 
         $data['invoice_number'] = $invoiceNumber;
+
 
         // Menggabungkan description, amount, dan pax menjadi array asosiatif
         $items = [];
@@ -62,6 +61,7 @@ class InvoiceController extends Controller
             'pax' => $pax,
             'totalAmount' => $totalAmount,
             'grandTotal' => $grandTotal,
+            'hotel' => $data['hotel'],
         ]);
     }
 }

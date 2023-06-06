@@ -36,7 +36,13 @@
                             </tbody>
                         </table>
 
+
                         <button type="button" class="btn btn-info" onclick="addRow()">Add Item</button><br><br>
+
+                        <div class="mb-5">
+                            <label for="hotel" class="form-label">Hotel</label>
+                            <input type="text" name="hotel" id="hotel" class="form-control" value="-">
+                        </div>
 
                         <button type="submit" class="btn btn-primary">Print Invoice</button>
                     </form>
@@ -53,9 +59,9 @@
             var descriptionCell = row.insertCell(0);
             var amountCell = row.insertCell(1);
             var paxCell = row.insertCell(2);
-            descriptionCell.innerHTML = '<input type="text" name="description[]" required>';
-            amountCell.innerHTML = '<input type="number" name="amount[]" step="0.01" required>';
-            paxCell.innerHTML = '<input type="number" name="pax[]" required>';
+            descriptionCell.innerHTML = '<input type="text" class="form-control" name="description[]" required>';
+            amountCell.innerHTML = '<input type="number" class="form-control" name="amount[]" step="0.01" required>';
+            paxCell.innerHTML = '<input type="number" class="form-control" name="pax[]" required>';
         }
     </script>
 @endsection

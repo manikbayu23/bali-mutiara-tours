@@ -23,8 +23,6 @@
 
     <link rel="stylesheet" href="{{ asset('umum/css/animate.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('umum/css/magnific-popup.css') }}">
-
     <link rel="stylesheet" href="{{ asset('umum/css/style.css') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
