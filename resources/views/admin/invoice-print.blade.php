@@ -34,7 +34,7 @@
             </div>
         </div>
         <div>
-            <h2 class="h5">Invoice Number: {{ $invoiceNumber }}</h2>
+            <h6 class="h6">Invoice Number: {{ $invoiceNumber }}</h6>
         </div>
         <div>
             <p>Tanggal: {{ $date }}</p>
