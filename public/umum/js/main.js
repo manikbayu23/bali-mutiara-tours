@@ -424,7 +424,7 @@ function validateForm() {
     var jumlahPesanan = document.getElementById("jumlah-pesanan").value;
 
     if (namaPaket == "" || name == "" || wa == "" || email == "" || namaHotel == "" || tanggalPesanan == "" || jumlahPesanan == "") {
-        alert("Harap lengkapi semua form sebelum memesan paket.");
+        alert("Please complete all forms before ordering.");
         return false;
     }
     return true;

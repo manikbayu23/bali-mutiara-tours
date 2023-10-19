@@ -77,6 +77,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     //kategori
     Route::get('/admin/kategori', [KategoriController::class, 'index'])->name('kategori');
+    Route::get('/admin/list', [KategoriController::class, 'list'])->name('kategori.list');
+    Route::get('/admin/kategori/edit/{id}', [KategoriController::class, 'edit'])->name('kategori.edit');
     Route::post('/admin/simpan-kategori', [KategoriController::class, 'store'])->name('simpan-kategori');
     Route::post('/admin/update-kategori/{id}', [KategoriController::class, 'update'])->name('update-kategori');
     Route::get('/admin/hapus-kategori/{id}', [KategoriController::class, 'destroy'])->name('hapus-kategori');

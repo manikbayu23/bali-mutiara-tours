@@ -4,11 +4,14 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Kategori;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
 class KategoriController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -16,17 +19,30 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        $kategori = Kategori::paginate(20);
+        // $kategori = Kategori::paginate(10);
 
-
+        // if (request()->ajax()) {
+        //     $kategori = Kategori::latest()->get();
+        //     return DataTables::of($kategori)->make(true);
+        // } else {
+        // }
 
         return view('admin.kategori', [
             'title' => 'Kategori Tour',
             "description" => "Kategori Tour",
-            "keywords" => "Kategori Tour"
-        ], compact('kategori'));
+            "keywords" => "Kategori Tour",
+
+        ]);
     }
 
+    public function list()
+    {
+
+        $data = Kategori::orderBy('kategori_tour', 'asc');
+        return DataTables::of($data)
+            ->addIndexColumn()
+            ->make(true);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -80,7 +96,8 @@ class KategoriController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Kategori::where('id', $id)->first();
+        return response()->json(['data' => $data]);
     }
 
     /**
@@ -118,10 +135,15 @@ class KategoriController extends Controller
      */
     public function destroy($id)
     {
-        $kategori = Kategori::find($id);
+        // Temukan kategori berdasarkan ID
+        $kategori = Kategori::findOrFail($id);
+
+        // Hapus kategori
         $kategori->delete();
 
-
-        return redirect()->back()->with('success', 'Kategori Berhasil di Hapus');
+        // Berikan respons atau umpan balik
+        return response()->json([
+            'message' => 'Kategori berhasil dihapus.'
+        ]);
     }
 }
