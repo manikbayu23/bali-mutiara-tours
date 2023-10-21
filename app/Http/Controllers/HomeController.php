@@ -121,7 +121,7 @@ class HomeController extends Controller
                 }
             })->where('is_archived', '0')
             ->orderByRaw("FIELD(paket_tour.lokasi, 'Bali', 'Nusa Penida', 'Lombok')")
-            ->paginate(24);
+            ->paginate(8);
 
         return view('paket-tour', [
             "title" => "Paket Tours - Bali - Nusa Penida & Lombok",

@@ -1,14 +1,22 @@
 @extends('layouts.main')
-
 @section('content-main')
     <div class="slider-background">
         <div class="slide-fade">
-            <div class="fade-items" style="background-image: url('umum/images/pura-danu.jpg')">
+            <div class="fade-items">
+                <img src="{{ asset('gambar/tirta-empul.jpeg') }}" alt="pura tirta empul" class="w-100 h-100"
+                    style="object-fit:cover;">
             </div>
-            <div class="fade-items" style="background-image: url('umum/images/rafting-3.jpg')"></div>
-            <div class="fade-items" style="background-image: url('umum/images/tirta-empul.jpg')"></div>
-            <div class="fade-items" style="background-image: url('umum/images/tari-kecak3.jpg')"></div>
-            <div class="fade-items" style="background-image: url('umum/images/bg-17.jpg')"></div>
+            <div class="fade-items">
+                <img src="{{ asset('gambar/nusa-penida.jpg') }}" alt="nusa penida" class="w-100 h-100"
+                    style="object-fit:cover;">
+            </div>
+            <div class="fade-items">
+                <img src="{{ asset('gambar/rafting.jpg') }}" alt="rafting" class="w-100 h-100" style="object-fit:cover;">
+            </div>
+            <div class="fade-items">
+                <img src="{{ asset('gambar/tari-kecak.jpeg') }}" alt="tari kecak" class="w-100 h-100"
+                    style="object-fit:cover;">
+            </div>
         </div>
         <div class="intro-slider">
             <div class="container-fluid">
@@ -23,7 +31,7 @@
 
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -132,8 +140,6 @@
                 <div style="background-image: url('umum/images/galeri-5.jpg');"></div>
                 <div style="background-image: url('umum/images/galeri-6.jpg');"></div>
             </div>
-
-
         </div>
     </section>
 
@@ -205,3 +211,10 @@
         </div>
     </section>
 @endsection
+@push('css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+@endpush
+@push('js')
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+@endpush

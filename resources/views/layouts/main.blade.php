@@ -25,11 +25,11 @@
 
     <link rel="stylesheet" href="{{ asset('umum/css/style.css') }}">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-
     <meta name="robots" content="index, follow">
+
+    @yield('style')
+
+    @stack('css')
 
     <script>
         function konversi() {
@@ -38,8 +38,6 @@
             });
         }
     </script>
-
-    @yield('style')
 
 </head>
 
@@ -163,15 +161,13 @@
         </svg>
     </div>
 
-    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
     <script src="{{ asset('umum/js/jquery.min.js') }}"></script>
     <script src="{{ asset('umum/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('umum/js/jquery.waypoints.min.js') }}"></script>
     <script src="{{ asset('umum/js/scrollax.min.js') }}"></script>
     <script src="{{ asset('umum/js/main.js') }}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11097109091"></script>
+    @stack('js')
 
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -183,9 +179,6 @@
 
         gtag('config', 'AW-11097109091');
     </script>
-
-    <!-- Event snippet for Kunjungan halaman conversion page -->
-
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTGYXN841"></script>
@@ -199,7 +192,7 @@
 
         gtag('config', 'G-5XTGYXN841');
     </script>
-
+    @stack('scripts')
     @yield('script')
 
 </body>

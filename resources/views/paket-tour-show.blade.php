@@ -141,9 +141,6 @@
                             <a href="{{ asset('../gambar/sawah.jpg') }}" data-lightbox="-" data-title="-">
                                 <div class="item-for" style="background-image: url('../gambar/sawah.jpg');"></div>
                             </a>
-                            <a href="{{ asset('../gambar/ayunan.jpg') }}" data-lightbox="-" data-title="-">
-                                <div class="item-for" style="background-image: url('../gambar/ayunan.jpg');"></div>
-                            </a>
                             <a href="{{ asset('../gambar/tari-barong.jpg') }}" data-lightbox="-" data-title="-">
                                 <div class="item-for" style="background-image: url('../gambar/tari-barong.jpg');"></div>
                             </a>
@@ -387,7 +384,8 @@
                             <form id="pemesanan">
                                 <h2 class="h5"><strong>Pesan Tour</strong></h2>
                                 <div class="form-group">
-                                    <input type="hidden" id="paket" name="paket" value="{{ $tour->nama_tour }}">
+                                    <input type="text" class="form-control " id="paket" name="paket"
+                                        value="{{ $tour->nama_tour }}" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="nama">Nama</label>
@@ -554,6 +552,104 @@
 
     </div>
 @endsection
-@section('script')
+@push('css')
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+@endpush
+@push('js')
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="{{ asset('umum/lightbox/js/lightbox.js') }}"></script>
-@endsection
+@endpush
+@push('scripts')
+    <script>
+        // Ambil elemen input jumlah pesanan
+        const jumlahPesananInput = document.getElementById('jumlah-pesanan');
+
+        // Ambil elemen tombol min
+        const btnMin = document.getElementById('btn-min');
+
+        // Tambahkan event click pada tombol min
+        btnMin.addEventListener('click', function() {
+            // Ambil nilai jumlah pesanan
+            let jumlahPesanan = jumlahPesananInput.value;
+
+            // Kurangi jumlah pesanan sebanyak 1
+            jumlahPesanan--;
+
+            // Jika jumlah pesanan kurang dari 1, set nilai jumlah pesanan menjadi 1
+            if (jumlahPesanan < 1) {
+                jumlahPesanan = 1;
+            }
+
+            // Update nilai jumalh
+            // Update nilai jumlah pesanan pada input
+            jumlahPesananInput.value = jumlahPesanan;
+        });
+
+        // Ambil elemen tombol plus
+        const btnPlus = document.getElementById('btn-plus');
+
+        // Tambahkan event click pada tombol plus
+        btnPlus.addEventListener('click', function() {
+            // Ambil nilai jumlah pesanan
+            let jumlahPesanan = jumlahPesananInput.value;
+            jumlahPesanan++;
+
+            // Update nilai jumlah pesanan pada input
+            jumlahPesananInput.value = jumlahPesanan;
+        });
+
+        const tanggalInput = document.getElementById('tanggal');
+
+        // Set nilai awal tanggal menjadi tanggal hari ini
+        tanggalInput.valueAsDate = new Date();
+        const tanggalHariIniString = new Date().toISOString().split('T')[0];
+        tanggalInput.setAttribute('min', tanggalHariIniString);
+
+
+
+
+        function sendWhatsApp() {
+            var namaPaket = document.getElementById("paket").value;
+            var name = document.getElementById("nama").value;
+            var wa = document.getElementById("numberWa").value;
+            var email = document.getElementById("email").value;
+            var namaHotel = document.getElementById("hotel").value;
+            var tanggalPesanan = document.getElementById("tanggal").value;
+            var jumlahPesanan = document.getElementById("jumlah-pesanan").value;
+
+            if (validateForm()) {
+
+                var message = "Hai Bali Mutiara Tours, Saya ingin memesan " + namaPaket + "%0ANama: " + name +
+                    "%0ANomer WA: " + wa + "%0AEmail: " + email + "%0APaket Hotel: " + namaHotel +
+                    "%0ATanggal Perjalanan: " + tanggalPesanan + "%0AJumlah Peserta: " + jumlahPesanan + "%20Orang" +
+                    "%0ATerima kasih.";
+                var url = "https://wa.me/" + 6287861184488 + "?text=" + message;
+
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-11097109091/iJz4CJ3EwI0YEOPkwasp'
+                });
+
+
+                window.open(url);
+            }
+        }
+
+        function validateForm() {
+            var namaPaket = document.getElementById("paket").value;
+            var name = document.getElementById("nama").value;
+            var wa = document.getElementById("numberWa").value;
+            var email = document.getElementById("email").value;
+            var namaHotel = document.getElementById("hotel").value;
+            var tanggalPesanan = document.getElementById("tanggal").value;
+            var jumlahPesanan = document.getElementById("jumlah-pesanan").value;
+
+            if (namaPaket == "" || name == "" || wa == "" || email == "" || namaHotel == "" || tanggalPesanan == "" ||
+                jumlahPesanan == "") {
+                alert("Please complete all forms before ordering.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+@endpush

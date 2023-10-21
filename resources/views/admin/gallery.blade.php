@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('judul_halaman', 'Gallery')
-
 @section('style')
     <style>
         .tombol-hapus {
@@ -82,6 +81,9 @@
         </div>
     </div>
 @endsection
+@push('js')
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+@endpush
 @section('script')
     <script>
         Dropzone.options.imageUpload = {
