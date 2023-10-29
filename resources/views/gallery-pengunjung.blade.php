@@ -1,6 +1,4 @@
 @extends('layouts.main')
-
-
 @section('content-main')
     <div class="slider-background">
         <div class="slide-fade">

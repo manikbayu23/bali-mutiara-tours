@@ -212,7 +212,7 @@
                         @if ($tour->lokasi == 'Bali')
                             <div class="item-nav" style="background-image: url('../gambar/rafting.jpg');"></div>
                             <div class="item-nav" style="background-image: url('../gambar/sawah.jpg');"></div>
-                            <div class="item-nav" style="background-image: url('../gambar/ayunan.jpg');"></div>
+                            {{-- <div class="item-nav" style="background-image: url('../gambar/ayunan.jpg');"></div> --}}
                             <div class="item-nav" style="background-image: url('../gambar/tari-barong.jpg');"></div>
                             <div class="item-nav" style="background-image: url('../gambar/tirta-empul.jpg');"></div>
                             <div class="item-nav" style="background-image: url('../gambar/jimbaran.jpg');"></div>
@@ -513,6 +513,8 @@
 
                                 <input type="button" class="btn btn-success w-100 p-2" value="Pesan Paket"
                                     onclick="sendWhatsApp()">
+
+                                <button id="btn-wa">button</button>
                             </form>
                         </div>
                         <div class="p-1 bg-white w-100 mt-4"></div>
@@ -562,6 +564,11 @@
 @endpush
 @push('scripts')
     <script>
+        $('#btn-wa').on('click', function(e) {
+
+            alert('danger');
+
+        })
         // Ambil elemen input jumlah pesanan
         const jumlahPesananInput = document.getElementById('jumlah-pesanan');
 

@@ -31,14 +31,6 @@
 
     @stack('css')
 
-    <script>
-        function konversi() {
-            gtag('event', 'conversion', {
-                'send_to': 'AW-11097109091/iJz4CJ3EwI0YEOPkwasp'
-            });
-        }
-    </script>
-
 </head>
 
 <body class="bg-light">
@@ -168,7 +160,13 @@
     <script src="{{ asset('umum/js/main.js') }}"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11097109091"></script>
     @stack('js')
-
+    <script>
+        function konversi() {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-11097109091/iJz4CJ3EwI0YEOPkwasp'
+            });
+        }
+    </script>
     <script>
         window.dataLayer = window.dataLayer || [];
 
