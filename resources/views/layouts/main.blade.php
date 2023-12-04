@@ -159,15 +159,16 @@
     <script src="{{ asset('umum/js/scrollax.min.js') }}"></script>
     <script src="{{ asset('umum/js/main.js') }}"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11097109091"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTGYXN841"></script>
     @stack('js')
+
     <script>
         function konversi() {
             gtag('event', 'conversion', {
                 'send_to': 'AW-11097109091/iJz4CJ3EwI0YEOPkwasp'
             });
         }
-    </script>
-    <script>
+
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -176,11 +177,8 @@
         gtag('js', new Date());
 
         gtag('config', 'AW-11097109091');
-    </script>
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5XTGYXN841"></script>
-    <script>
+
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {

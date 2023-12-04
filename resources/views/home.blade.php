@@ -3,45 +3,28 @@
     <div class="slider-background">
         <div class="slide-fade">
             <div class="fade-items">
-                <img src="{{ asset('gambar/tirta-empul.jpeg') }}" alt="pura tirta empul" class="w-100 h-100"
+                <img data-src="{{ asset('gambar/tirta-empul.jpeg') }}" alt="pura tirta empul" class="w-100 h-100 lazy"
                     style="object-fit:cover;">
             </div>
             <div class="fade-items">
-                <img src="{{ asset('gambar/nusa-penida.jpg') }}" alt="nusa penida" class="w-100 h-100"
+                <img data-src="{{ asset('gambar/nusa-penida.jpg') }}" alt="nusa penida" class="w-100 h-100 lazy"
                     style="object-fit:cover;">
             </div>
             <div class="fade-items">
-                <img src="{{ asset('gambar/rafting.jpg') }}" alt="rafting" class="w-100 h-100" style="object-fit:cover;">
+                <img data-src="{{ asset('gambar/rafting.jpg') }}" alt="rafting" class="w-100 h-100 lazy"
+                    style="object-fit:cover;">
             </div>
             <div class="fade-items">
-                <img src="{{ asset('gambar/tari-kecak.jpeg') }}" alt="tari kecak" class="w-100 h-100"
+                <img data-src="{{ asset('gambar/tari-kecak.jpeg') }}" alt="tari kecak" class="w-100 h-100 lazy"
                     style="object-fit:cover;">
             </div>
         </div>
         <div class="intro-slider">
             <div class="container-fluid">
                 <div class="col-md-10 col-lg-7 ftco-animate">
-                    <span class="subheading">Welcome to Bali Mutiara Tours</span>
+                    <span class="subheading">Welcome to Bali Mutiara Tours</span> dhdhghgh
                     <h1 class="isi-intro">Temukan Tempat Liburan Favorit Anda Bersama Kami</h1>
                     <a href="{{ route('pengunjung.paket-tour') }}" class="btn bt-lihatPaket">Pesan Sekarang</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <a href="{{ route('pengunjung.paket-tour.show', 'paket-tour-bali-4-hari-3-malam') }}">
-                        <img src="{{ asset('gambar/banner-promosi.png') }}" width="100%" alt="paket tour 4 hari 3 malam">
-                    </a>
                 </div>
             </div>
         </div>
@@ -132,7 +115,7 @@
             <div class="col-md-12 heading-section text-center">
                 <h2 class="subheading mb-3  ftco-animate">Gallery</h2>
             </div>
-            <div class="slick-carousel  ftco-animate">
+            <div class="slick-carousel ftco-animate">
                 <div style="background-image: url('umum/images/galeri-3.jpg');"></div>
                 <div style="background-image: url('umum/images/galeri-1.jpg');"></div>
                 <div style="background-image: url('umum/images/galeri-2.jpg');"></div>
@@ -217,4 +200,20 @@
 @endpush
 @push('js')
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.10/jquery.lazy.plugins.min.js">
+    </script>
+@endpush
+@push('scripts')
+    <script>
+        $('.lazy').Lazy({
+            // your configuration goes here
+            scrollDirection: 'vertical',
+            effect: 'fadeIn',
+            visibleOnly: true,
+            onError: function(element) {
+                console.log('error loading ' + element.data('src'));
+            }
+        });
+    </script>
 @endpush
